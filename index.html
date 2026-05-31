@@ -1,0 +1,1783 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tuvi.life - La so moi ngay</title>
+    <link rel="stylesheet" href="styles.css?v=paid-report-upgrade-1" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section id="home" class="view active">
+        <header class="app-header">
+          <a class="brand" data-open="home" href="#">
+            <span></span>
+            <strong>tuvi.life</strong>
+          </a>
+          <button class="text-button" data-open="guide" type="button">상담</button>
+        </header>
+
+        <section class="hero-section">
+          <div class="hero-copy">
+            <span class="eyebrow">Lá số cá nhân miễn phí</span>
+            <h1>Đọc nhịp vận hôm nay bằng ngày sinh của bạn</h1>
+            <p>Một trải nghiệm tử vi hiện đại: rõ ràng, nhẹ nhàng và có thể quay lại mỗi ngày.</p>
+            <button class="primary-button" data-open="input" data-service="today" type="button">Bắt đầu xem miễn phí</button>
+          </div>
+
+          <div class="hero-card" aria-hidden="true">
+            <div class="hero-card-top">
+              <span>Hôm nay</span>
+              <b id="home-score">76</b>
+            </div>
+            <div class="hero-ring" style="--score: 76"><strong>76</strong></div>
+            <div class="hero-lines">
+              <i style="--w: 78%"></i>
+              <i style="--w: 62%"></i>
+              <i style="--w: 88%"></i>
+            </div>
+          </div>
+        </section>
+
+        <section class="promo-carousel" aria-label="Goi y noi bat">
+          <div class="promo-track" id="promo-track">
+            <article class="promo-slide promo-orange">
+              <div class="promo-copy">
+                <span class="promo-pill">Diem danh</span>
+                <h2>Mo van may khi quay lai moi ngay</h2>
+                <p>Mots tin hieu nho, mot loi nhac dung luc va mot ngay de ban giu nhip tot hon.</p>
+              </div>
+              <div class="promo-visual bonus-visual" aria-hidden="true">
+                <i class="bonus-body"></i>
+                <i class="bonus-star"></i>
+                <i class="bonus-hand"></i>
+              </div>
+            </article>
+
+            <article class="promo-slide promo-blue">
+              <div class="promo-copy">
+                <span class="promo-pill">Cung hop</span>
+                <h2>Ai hop nhip voi ban mua nay?</h2>
+                <p>Xem cach hai nguoi de gan nhau hon, de tranh hieu lam va giu cam xuc em hon.</p>
+              </div>
+              <div class="promo-visual compat-visual" aria-hidden="true">
+                <i class="compat-ground"></i>
+                <i class="compat-person one"></i>
+                <i class="compat-person two"></i>
+                <i class="compat-heart"></i>
+              </div>
+            </article>
+
+            <article class="promo-slide promo-green">
+              <div class="promo-copy">
+                <span class="promo-pill">Ngay chon</span>
+                <h2>Dung bo lo ngay quan trong</h2>
+                <p>Truoc khi gap go, ky ket hay bat dau viec moi, xem truoc van khi de chon dung luc.</p>
+              </div>
+              <div class="promo-visual calendar-visual" aria-hidden="true">
+                <i class="calendar-card"></i>
+                <i class="calendar-ring"></i>
+                <i class="calendar-pen"></i>
+              </div>
+            </article>
+
+            <article class="promo-slide promo-cream">
+              <div class="promo-copy">
+                <span class="promo-pill">Con giap</span>
+                <h2>Hom nay co hoi nao dang go cua?</h2>
+                <p>Mot cach nhe nhang de xem ngay nao nen tien len, ngay nao nen cham lai.</p>
+              </div>
+              <div class="promo-visual zodiac-visual" aria-hidden="true">
+                <i></i><i></i><i></i><i></i><i></i><i></i>
+              </div>
+            </article>
+          </div>
+          <div class="promo-dots" aria-label="Chon banner">
+            <button class="promo-dot active" type="button" aria-label="Banner 1"></button>
+            <button class="promo-dot" type="button" aria-label="Banner 2"></button>
+            <button class="promo-dot" type="button" aria-label="Banner 3"></button>
+            <button class="promo-dot" type="button" aria-label="Banner 4"></button>
+          </div>
+        </section>
+
+        <section class="daily-portal" aria-label="매일 보는 운세 포털">
+          <div class="portal-head">
+            <span>오늘의 무료 운세</span>
+            <h2>매일 확인하고 복주머니 받기</h2>
+            <p>오늘의 운세부터 타로, 재물운, 궁합까지 한 번에 확인해요.</p>
+          </div>
+          <div class="portal-main-card">
+            <div>
+              <span>오늘 내 운세 점수</span>
+              <strong><b id="portal-score">90</b>점</strong>
+              <p>총운, 재물운, 연애운, 건강운을 한눈에 확인해요.</p>
+            </div>
+            <button data-open="input" data-service="today" type="button">오늘 운세 보기</button>
+          </div>
+          <div class="portal-quick-grid">
+            <button data-open="input" data-service="today" type="button">
+              <i class="portal-icon portal-sun"></i>
+              <strong>오늘의 운세</strong>
+              <span>시간대별 흐름</span>
+            </button>
+            <button data-open="input" data-service="moneyTarot" type="button">
+              <i class="portal-icon portal-coin"></i>
+              <strong>오늘 재물운</strong>
+              <span>돈 들어올 타이밍</span>
+            </button>
+            <button data-open="tarot" data-nav="tarot" data-scroll-to="daily-tarot-draw" type="button">
+              <i class="portal-icon portal-card"></i>
+              <strong>타로 1장</strong>
+              <span>무료로 뽑기</span>
+            </button>
+            <button data-open="guide" type="button">
+              <i class="portal-icon portal-chat"></i>
+              <strong>1:1 상담</strong>
+              <span>첫 상담 혜택</span>
+            </button>
+            <button data-open="input" data-service="tomorrow" type="button">
+              <i class="portal-icon portal-moon"></i>
+              <strong>내일운세</strong>
+              <span>미리 준비하기</span>
+            </button>
+            <button data-open="input" data-service="couple" type="button">
+              <i class="portal-icon portal-heart"></i>
+              <strong>궁합</strong>
+              <span>둘의 흐름</span>
+            </button>
+            <button data-open="input" data-service="reunionTarot" type="button">
+              <i class="portal-icon portal-reunion"></i>
+              <strong>재회타로</strong>
+              <span>다시 연결될까</span>
+            </button>
+            <button data-open="input" data-service="careerTarot" type="button">
+              <i class="portal-icon portal-career"></i>
+              <strong>직업운</strong>
+              <span>커리어 선택</span>
+            </button>
+          </div>
+          <div class="portal-reward-row">
+            <strong>오늘 운세 보면 복주머니 +1</strong>
+            <button data-open="input" data-service="today" type="button">받으러 가기</button>
+          </div>
+        </section>
+
+        <section class="saju-menu-card" aria-label="사주 풀이 메뉴">
+          <div class="saju-menu-heading">
+            <span>소름 돋는 미래 예측</span>
+            <h2>가장 정확한 사주 풀이</h2>
+          </div>
+          <div class="saju-menu-grid">
+            <button data-open="year-info" data-service="year" type="button">
+              <span class="saju-menu-icon icon-new-year" aria-hidden="true"></span>
+              <strong>신년운세</strong>
+              <small>2026 큰 흐름</small>
+            </button>
+            <button data-open="input" data-service="secret" type="button">
+              <span class="saju-menu-icon icon-tojeong" aria-hidden="true"></span>
+              <strong>토정비결</strong>
+              <small>숨은 길흉 분석</small>
+            </button>
+            <button data-open="input" data-service="traditional" type="button">
+              <span class="saju-menu-icon icon-traditional" aria-hidden="true"></span>
+              <strong>정통사주</strong>
+              <small>원국 정밀 풀이</small>
+            </button>
+            <button data-open="input" data-service="today" type="button">
+              <span class="saju-menu-icon icon-today" aria-hidden="true"></span>
+              <strong>오늘의 운세</strong>
+              <small>시간대별 흐름</small>
+            </button>
+            <button data-open="input" data-service="tomorrow" type="button">
+              <span class="saju-menu-icon icon-tomorrow" aria-hidden="true"></span>
+              <strong>내일의 운세</strong>
+              <small>미리보는 변수</small>
+            </button>
+            <button data-open="input" data-service="special" type="button">
+              <span class="saju-menu-icon icon-special-day" aria-hidden="true"></span>
+              <strong>지정일 운세</strong>
+              <small>중요한 날 선택</small>
+            </button>
+            <button data-open="input" data-service="face" type="button">
+              <span class="saju-menu-icon icon-face-read" aria-hidden="true"></span>
+              <strong>관상</strong>
+              <small>인상과 매력운</small>
+            </button>
+            <button data-open="input" data-service="psychology" type="button">
+              <span class="saju-menu-icon icon-psych" aria-hidden="true"></span>
+              <strong>심리풀이</strong>
+              <small>마음 패턴 해석</small>
+            </button>
+            <button data-open="input" data-service="couple" type="button">
+              <span class="saju-menu-icon icon-pair" aria-hidden="true"></span>
+              <strong>짝궁합</strong>
+              <small>둘의 상호작용</small>
+            </button>
+          </div>
+          <div class="saju-path-preview" aria-label="사주 풀이별 안내">
+            <article>
+              <b>연간/정통</b>
+              <span>신년운세, 토정비결, 정통사주는 사주팔자와 세운을 기준으로 깊게 분석해요.</span>
+            </article>
+            <article>
+              <b>일간/특정일</b>
+              <span>오늘, 내일, 지정일 운세는 지금 바로 필요한 행동과 조심할 타이밍을 알려줘요.</span>
+            </article>
+            <article>
+              <b>관계/심리</b>
+              <span>관상, 심리풀이, 짝궁합은 사람과 마음의 패턴을 중심으로 다르게 풀어줘요.</span>
+            </article>
+          </div>
+        </section>
+
+        <section class="daily-psychology" aria-label="Daily psychology readings">
+          <div class="daily-heading">
+            <span>5월 27일</span>
+            <div>
+              <h2>매일 달라지는 심리풀이</h2>
+              <button type="button">전체보기</button>
+            </div>
+          </div>
+
+          <div class="psychology-scroll">
+            <button class="psychology-card" data-open="input" data-service="today" type="button">
+              <span class="psych-thumb exercise-thumb">
+                <i class="person"></i>
+                <b>운동해?</b>
+              </span>
+              <strong>오늘의 운동 조언</strong>
+            </button>
+
+            <button class="psychology-card" data-open="input" data-service="psychology" type="button">
+              <span class="psych-thumb character-thumb">
+                <i class="face"></i>
+                <b>나의 캐릭터</b>
+              </span>
+              <strong>성향 상담실 입장!<br />나는 어떤 캐릭터?</strong>
+            </button>
+
+            <button class="psychology-card" data-open="input" data-service="couple" type="button">
+              <span class="psych-thumb love-thumb">
+                <i class="heart-one"></i>
+                <i class="heart-two"></i>
+                <b>연애 조언</b>
+              </span>
+              <strong>호르몬 맞춤 연애<br />조언편</strong>
+            </button>
+
+            <button class="psychology-card" data-open="input" data-service="year" type="button">
+              <span class="psych-thumb money-thumb">
+                <i class="coin-stack"></i>
+                <i class="chart-line"></i>
+                <b>투자 업종</b>
+              </span>
+              <strong>오늘 잘맞는 투자<br />업종은?</strong>
+            </button>
+          </div>
+        </section>
+
+        <section class="custom-fortune" aria-label="Personalized fortune picks">
+          <div class="custom-scroll">
+            <button class="custom-card custom-rose" data-open="input" data-service="year" type="button">
+              <span>맞춤 운세</span>
+              <h2><mark>30대 남성</mark>에게 필요한</h2>
+              <em>1/4</em>
+              <p>아직도 신년운 안봤다면 지금이 타이밍!</p>
+            </button>
+
+            <button class="custom-card custom-sky" data-open="input" data-service="face" type="button">
+              <span>맞춤 운세</span>
+              <h2><mark>30대 남성</mark>에게 필요한</h2>
+              <em>2/4</em>
+              <p>내 외모가 알려주는 오늘의 첫인상 흐름</p>
+            </button>
+
+            <button class="custom-card custom-peach" data-open="input" data-service="traditional" type="button">
+              <span>맞춤 운세</span>
+              <h2><mark>30대 남성</mark>에게 필요한</h2>
+              <em>3/4</em>
+              <p>간단한 운세만으로 부족하다면?</p>
+            </button>
+
+            <button class="custom-card custom-mint" data-open="input" data-service="psychology" type="button">
+              <span>맞춤 운세</span>
+              <h2><mark>30대 남성</mark>에게 필요한</h2>
+              <em>4/4</em>
+              <p>고민에 대한 해답, 여기 있어요</p>
+            </button>
+          </div>
+        </section>
+
+        <section class="luck-methods" aria-label="Lucky methods">
+          <div class="luck-method-heading">
+            <span>액운 방지</span>
+            <h2>손쉽게 행운을 얻는 방법</h2>
+          </div>
+
+          <div class="luck-method-list">
+            <button class="luck-method-item" data-open="input" data-service="secret" type="button">
+              <span class="luck-method-icon dice-icon" aria-hidden="true"><i></i></span>
+              <span class="luck-method-copy">
+                <strong>행운의 번호</strong>
+                <small>내 인생을 바꿔줄 6개의 숫자</small>
+              </span>
+            </button>
+
+            <button class="luck-method-item" data-open="input" data-service="year" type="button">
+              <span class="luck-method-icon pouch-icon" aria-hidden="true"><i></i></span>
+              <span class="luck-method-copy">
+                <strong>전생복덕운</strong>
+                <small>타고난 복을 활용해 보세요</small>
+              </span>
+            </button>
+
+            <button class="luck-method-item" data-open="input" data-service="secret" type="button">
+              <span class="luck-method-icon lamp-icon" aria-hidden="true"><i></i></span>
+              <span class="luck-method-copy">
+                <strong>살풀이</strong>
+                <small>액운 방지에는 살풀이가 최고!</small>
+              </span>
+            </button>
+
+            <button class="luck-method-item" data-open="guide" type="button">
+              <span class="luck-method-icon talisman-icon" aria-hidden="true"><i></i></span>
+              <span class="luck-method-copy">
+                <strong>행운의 부적 <em>APP 전용</em></strong>
+                <small>나를 도와주는 영험한 기운</small>
+              </span>
+            </button>
+
+            <button class="luck-method-item" data-open="input" data-service="special" type="button">
+              <span class="luck-method-icon move-icon" aria-hidden="true"><i></i></span>
+              <span class="luck-method-copy">
+                <strong>이사택일</strong>
+                <small>한눈에 보는 이사하기 좋은 날</small>
+              </span>
+            </button>
+
+            <button class="luck-method-item" data-open="input" data-service="face" type="button">
+              <span class="luck-method-icon face-icon" aria-hidden="true"><i></i></span>
+              <span class="luck-method-copy">
+                <strong>관상 <em>APP 전용</em></strong>
+                <small>얼굴에 적힌 운명 알아보기</small>
+              </span>
+            </button>
+          </div>
+        </section>
+
+        <section class="solution-grid-section" aria-label="Solution tools">
+          <div class="solution-heading">
+            <span>소원을 이루요</span>
+            <h2>지금 필요한 해결책</h2>
+          </div>
+
+          <div class="solution-grid">
+            <button class="solution-tile" data-open="guide" type="button">
+              <strong>소원담벼락 <em>APP 전용</em></strong>
+              <span>함께 비는 소원은<br />더 빨리 이뤄져요</span>
+              <i class="solution-candle" aria-hidden="true"></i>
+            </button>
+
+            <button class="solution-tile" data-open="input" data-service="psychology" type="button">
+              <strong>고민구슬 <em>APP 전용</em></strong>
+              <span>머리 아픈 고민!<br />3초만에 끝내기</span>
+              <i class="solution-orb" aria-hidden="true"></i>
+            </button>
+
+            <button class="solution-tile" data-open="guide" type="button">
+              <strong>점신1:1상담</strong>
+              <span>혼자 해결하기 어려운 문제가<br />있다면</span>
+              <i class="solution-chat" aria-hidden="true"></i>
+            </button>
+
+            <button class="solution-tile" data-open="input" data-service="today" type="button">
+              <strong>포춘쿠키 <em>APP 적용</em></strong>
+              <span>오늘의 당신에게<br />필요한 한마디</span>
+              <i class="solution-megaphone" aria-hidden="true"></i>
+            </button>
+          </div>
+        </section>
+
+        <section class="fate-menu-card" aria-label="Born destiny">
+          <div class="fate-heading">
+            <span>타고난 운명</span>
+            <h2>나에 대한 모든 것</h2>
+          </div>
+
+          <div class="fate-grid">
+            <button data-open="input" data-service="today" type="button">
+              <span class="fate-icon pig-icon" aria-hidden="true"><i></i></span>
+              <strong>띠 운세</strong>
+            </button>
+            <button data-open="input" data-service="year" type="button">
+              <span class="fate-icon star-icon" aria-hidden="true"><i></i></span>
+              <strong>별자리 운세</strong>
+            </button>
+            <button data-open="input" data-service="special" type="button">
+              <span class="fate-icon season-icon" aria-hidden="true"><i></i></span>
+              <strong>태어난 계절운</strong>
+            </button>
+            <button data-open="input" data-service="traditional" type="button">
+              <span class="fate-icon birthday-icon" aria-hidden="true"><i></i></span>
+              <strong>생년월일 운세</strong>
+            </button>
+            <button data-open="input" data-service="secret" type="button">
+              <span class="fate-icon pastlife-icon" aria-hidden="true"><i></i></span>
+              <strong>전생운</strong>
+            </button>
+            <button data-open="input" data-service="face" type="button">
+              <span class="fate-icon gem-icon" aria-hidden="true"><i></i></span>
+              <strong>탄생석</strong>
+            </button>
+          </div>
+        </section>
+
+        <section class="compat-menu-card" aria-label="Compatibility readings">
+          <div class="compat-heading">
+            <span>궁합 파헤치기</span>
+            <h2>우리는 어떻게 될까?</h2>
+          </div>
+
+          <div class="compat-list">
+            <button class="compat-item" data-open="input" data-service="couple" type="button">
+              <span class="compat-icon cute-icon" aria-hidden="true"><i></i></span>
+              <span class="compat-copy">
+                <strong>짝궁합</strong>
+                <small>쉽고 자세한 해석을 원한다면!</small>
+              </span>
+            </button>
+
+            <button class="compat-item" data-open="input" data-service="traditional" type="button">
+              <span class="compat-icon classic-icon" aria-hidden="true"><i></i></span>
+              <span class="compat-copy">
+                <strong>정통궁합</strong>
+                <small>연애 시작 전 확인 필수!</small>
+              </span>
+            </button>
+
+            <button class="compat-item" data-open="input" data-service="year" type="button">
+              <span class="compat-icon zodiac-match-icon" aria-hidden="true"><i></i></span>
+              <span class="compat-copy">
+                <strong>별자리 궁합</strong>
+                <small>별자리로 이어진 너와 나</small>
+              </span>
+            </button>
+
+            <button class="compat-item" data-open="input" data-service="secret" type="button">
+              <span class="compat-icon blood-icon" aria-hidden="true"><i></i></span>
+              <span class="compat-copy">
+                <strong>혈액형 궁합</strong>
+                <small>같은 혈액형 vs 다른 혈액형</small>
+              </span>
+            </button>
+
+            <button class="compat-item" data-open="input" data-service="face" type="button">
+              <span class="compat-icon celeb-icon" aria-hidden="true"><i></i></span>
+              <span class="compat-copy">
+                <strong>연예인 궁합</strong>
+                <small>우리가 연인이 되면 어떨까?</small>
+              </span>
+            </button>
+
+            <button class="compat-item" data-open="input" data-service="special" type="button">
+              <span class="compat-icon spouse-icon" aria-hidden="true"><i></i></span>
+              <span class="compat-copy">
+                <strong>나의 인연 운세</strong>
+                <small>미래의 배우자 미리 보기</small>
+              </span>
+            </button>
+          </div>
+        </section>
+
+        <section class="dream-card" aria-label="Dream meaning">
+          <div class="dream-heading">
+            <span>꿈해몽</span>
+            <h2>그 꿈에 담긴 의미</h2>
+          </div>
+
+          <div class="dream-list">
+            <button data-open="input" data-service="psychology" type="button">
+              <em>#꽃</em>
+              <strong>예쁜 꽃에 입술을 맞추는 꿈</strong>
+            </button>
+            <button data-open="input" data-service="today" type="button">
+              <em>#딸기</em>
+              <strong>딸기를 따서 앞치마에 가득 담는 꿈</strong>
+            </button>
+            <button data-open="input" data-service="couple" type="button">
+              <em>#토끼</em>
+              <strong>토끼에게 먹이를 주는 꿈</strong>
+            </button>
+            <button data-open="input" data-service="secret" type="button">
+              <em>#금</em>
+              <strong>금으로 된 장신구를 얻는 꿈</strong>
+            </button>
+          </div>
+
+          <button class="dream-more" data-open="guide" type="button">다른 꿈해몽 보러 가기</button>
+        </section>
+
+        <section class="service-card">
+          <div class="section-heading">
+            <span>Dịch vụ miễn phí</span>
+            <h2>Chọn phần bạn muốn xem</h2>
+          </div>
+          <div class="service-grid" id="service-grid"></div>
+        </section>
+
+        <section class="today-card">
+          <div>
+            <span>Gợi ý hôm nay</span>
+            <h2>Giữ nhịp chậm, chọn một việc quan trọng</h2>
+            <p>Ngày phù hợp để sắp xếp lại kế hoạch, nói rõ điều mình cần và tránh quyết định vì cảm xúc nhất thời.</p>
+          </div>
+          <button data-open="input" data-service="today" type="button">Xem</button>
+        </section>
+
+        <section class="insight-card">
+          <div class="section-heading">
+            <span>Cách hoạt động</span>
+            <h2>Không thu phí, ưu tiên trải nghiệm quay lại hằng ngày</h2>
+          </div>
+          <div class="step-list">
+            <article><b>01</b><strong>Nhập thông tin sinh</strong><span>Tên, ngày sinh, giờ sinh và giới tính.</span></article>
+            <article><b>02</b><strong>Đọc lá số cơ bản</strong><span>Tứ trụ, ngũ hành, điểm vận khí và lời khuyên.</span></article>
+            <article><b>03</b><strong>Quay lại mỗi ngày</strong><span>Sau này có thể hỗ trợ bằng quảng cáo nhẹ, nội dung vẫn mở tự do.</span></article>
+          </div>
+        </section>
+      </section>
+
+      <section id="year-info" class="view year-info-view">
+        <header class="page-header">
+          <button class="back-button" data-open="home" type="button">‹</button>
+          <strong>신년운세</strong>
+          <button class="icon-button" data-open="input" data-service="year" type="button">↗</button>
+        </header>
+
+        <section class="year-fortune-report year-info-report" aria-label="신년운세 설명">
+          <div class="year-title-banner">Title Banner</div>
+
+          <article class="year-reading-section">
+            <h2>총운풀이</h2>
+            <p>올해는 감정 조절과 꾸준함이 가장 중요한 해입니다. 기분이 좋을 때는 크게 움직이고 싶어지지만, 갑작스러운 변화보다 정해둔 루틴을 지키는 쪽에서 더 좋은 결과가 생깁니다.</p>
+            <p>특히 올해는 자기 계발과 실력 향상에 힘을 쓸수록 운이 열립니다. 공부, 자격, 기술, 업무 역량처럼 시간이 쌓여 결과가 나는 일에 집중하면 연말로 갈수록 확실한 변화가 보입니다.</p>
+            <p>관계에서는 속마음을 혼자 오래 품기보다 적절히 표현하는 것이 좋습니다. 감정을 건강하게 나누면 가까운 사람과의 심리적 거리가 줄고, 새로운 인연도 자연스럽게 들어옵니다.</p>
+            <p>다만 연초에 세운 꿈을 끝까지 유지하기는 쉽지 않을 수 있습니다. 큰 목표를 한 번에 이루려 하기보다, 월별로 작은 성과를 쌓아가는 방식이 올해의 흐름에 더 잘 맞습니다.</p>
+            <p>올해는 초반보다 중반 이후에 운의 색이 더 분명해집니다. 처음에는 내가 제대로 가고 있는지 확신이 부족할 수 있지만, 포기하지 않고 같은 방향을 유지하면 주변에서 먼저 변화를 알아보게 됩니다.</p>
+          </article>
+
+          <article class="year-reading-section">
+            <h2>가장 좋은 것</h2>
+            <p>올해는 학업운과 성장운이 좋은 시기입니다. 배우고 익히는 일, 시험 준비, 자격 취득, 새로운 업무 기술 습득에 힘을 쏟으면 기대보다 좋은 결과를 얻을 가능성이 큽니다.</p>
+            <p>내 능력이 사람들에게 인정받고, 맡은 역할이 넓어지는 일이 생길 수 있습니다. 목표를 구체적으로 세우고 꾸준히 밀고 나가면 내가 생각한 것보다 빠르게 위치가 올라갑니다.</p>
+            <p>특히 문서, 공부, 발표, 정리, 기획처럼 머리를 쓰는 일에서 운이 살아납니다. 평소 어렵게 느꼈던 분야도 올해는 반복해서 다루면 내 것으로 만들 수 있습니다.</p>
+          </article>
+
+          <article class="year-reading-section">
+            <h2>주의가 필요한 것</h2>
+            <p>올해는 마음의 흔들림이 커질 수 있으므로 감정 조절이 중요합니다. 갑작스러운 우울감이나 공허함이 찾아올 수 있으니, 혼자 참기보다 생활 리듬과 휴식 시간을 먼저 챙기세요.</p>
+            <p>사람 관계에서는 괜한 오해나 거리감이 생기지 않도록 말의 온도를 조절해야 합니다. 감정적으로 몰입하기보다 현실적으로 지금 해야 할 일에 집중하는 것이 좋습니다.</p>
+            <p>아직 일어나지 않은 일을 미리 걱정해 판단을 흐리지 않는 것이 중요합니다. 감정과 사실을 분리해서 보면 올해의 불안은 훨씬 다루기 쉬워집니다.</p>
+          </article>
+
+          <article class="year-reading-section">
+            <h2>올해의 조언</h2>
+            <p>올해는 생각이 많아지는 시기입니다. 상상과 걱정이 커지면 현실적인 판단이 늦어질 수 있으니, 계획을 작게 나누고 바로 실행할 수 있는 일부터 처리하세요.</p>
+            <p>꿈은 크게 가져도 좋지만 현실적인 순서가 없으면 오히려 나를 지치게 만들 수 있습니다. 매달 하나씩 분명한 결과를 남기는 것이 가장 좋은 개운법입니다.</p>
+          </article>
+
+          <button class="year-start-button" data-open="input" data-service="year" type="button">내 신년운세 자세히 보기</button>
+        </section>
+      </section>
+
+      <section id="tarot" class="view tarot-page">
+        <header class="app-header">
+          <a class="brand" data-open="home" data-nav="year" href="#">
+            <span></span>
+            <strong>tuvi.life</strong>
+          </a>
+          <button class="text-button" data-open="guide" type="button">상담</button>
+        </header>
+
+        <section class="tarot-home" aria-label="Tarot readings">
+          <section class="daily-tarot-draw" id="daily-tarot-draw" aria-label="오늘의 타로 1장 뽑기">
+            <div class="daily-tarot-head">
+              <span>매일 무료</span>
+              <h1>오늘의 타로 1장</h1>
+              <p>지금 마음에 가장 가까운 카드를 한 장 골라보세요.</p>
+            </div>
+
+            <div class="tarot-deck-row" aria-label="타로 카드 선택">
+              <button class="draw-card" data-card-index="0" type="button"><span></span></button>
+              <button class="draw-card featured" data-card-index="1" type="button"><span></span></button>
+              <button class="draw-card" data-card-index="2" type="button"><span></span></button>
+            </div>
+
+            <button id="shuffle-tarot-button" class="shuffle-tarot-button" type="button">카드 섞기</button>
+
+            <section id="tarot-draw-result" class="tarot-draw-result" hidden>
+              <div class="drawn-card-face">
+                <img id="drawn-card-image" alt="선택한 타로 카드" loading="lazy" referrerpolicy="no-referrer" />
+                <span id="drawn-card-symbol">☀</span>
+              </div>
+              <div class="drawn-card-copy">
+                <span>오늘의 메시지</span>
+                <h2 id="drawn-card-title">The Sun</h2>
+                <p id="drawn-card-message">오늘은 솔직하게 움직일수록 좋은 반응을 얻습니다.</p>
+              </div>
+              <div class="tarot-result-actions">
+                <button class="unlock-three-card" type="button">광고 보고 3장 배열 열기</button>
+                <button class="ask-tarot-consult" data-open="guide" type="button">상담으로 더 묻기</button>
+              </div>
+            </section>
+          </section>
+
+          <div class="tarot-feature">
+            <div class="tarot-feature-head">
+              <span>매일 찾게 되는 타로카드 💜</span>
+              <h2>평범한 일상 속 타로점</h2>
+              <button data-open="input" data-service="tarot" type="button">타로 점 보기 &gt;</button>
+            </div>
+
+            <div class="tarot-quick-grid">
+              <button class="tarot-quick-card" data-open="input" data-service="tarot" type="button">
+                <span class="tarot-card-icon today-tarot-icon" aria-hidden="true"></span>
+                <strong>오늘의 타로</strong>
+                <small>오늘 하루는 어떨까?</small>
+              </button>
+
+              <button class="tarot-quick-card" data-open="input" data-service="monthTarot" type="button">
+                <span class="tarot-card-icon month-tarot-icon" aria-hidden="true"></span>
+                <strong>이달의 타로</strong>
+                <small>이번달 나의 흐름은?</small>
+              </button>
+            </div>
+          </div>
+
+          <div class="tarot-list-section">
+            <span class="tarot-kicker">타로점으로 고민해결! 🔮</span>
+            <h2>궁금한 타로를 선택해봐요!</h2>
+
+            <div class="tarot-chip-row" aria-label="Tarot categories">
+              <button class="active" data-open="input" data-service="tarot" type="button">전체</button>
+              <button data-open="input" data-service="yearTarot" type="button">26년 타로 🐂</button>
+              <button data-open="input" data-service="loveTarot" type="button">연애/결혼 💕</button>
+              <button data-open="input" data-service="reunionTarot" type="button">짝사랑/재회 💔</button>
+              <button data-open="input" data-service="careerTarot" type="button">취업/학업 ✏️</button>
+              <button data-open="input" data-service="etcTarot" type="button">그 외 🍀</button>
+            </div>
+
+            <div class="tarot-reading-list">
+              <button class="tarot-reading-item" data-open="input" data-service="yearTarot" type="button">
+                <span>
+                  <strong>타로로 읽는 26년의 운의 흐름</strong>
+                  <small>#시작&nbsp;&nbsp;#변화&nbsp;&nbsp;#확장</small>
+                </span>
+                <i class="tarot-thumb thumb-year" aria-hidden="true"><b>2026</b></i>
+              </button>
+
+              <button class="tarot-reading-item" data-open="input" data-service="loveTarot" type="button">
+                <span>
+                  <strong>타로로 읽는 26년의 사랑 흐름</strong>
+                  <small>#끌림&nbsp;&nbsp;#선택&nbsp;&nbsp;#진심</small>
+                </span>
+                <i class="tarot-thumb thumb-love" aria-hidden="true"><b>2026</b></i>
+              </button>
+
+              <button class="tarot-reading-item" data-open="input" data-service="moneyTarot" type="button">
+                <span>
+                  <strong>타로로 읽는 26년의 재물 흐름</strong>
+                  <small>#흐름&nbsp;&nbsp;#안정&nbsp;&nbsp;#기회</small>
+                </span>
+                <i class="tarot-thumb thumb-money" aria-hidden="true"><b>2026</b></i>
+              </button>
+
+              <button class="tarot-reading-item" data-open="input" data-service="careerTarot" type="button">
+                <span>
+                  <strong>타로로 읽는 26년의 취업 흐름</strong>
+                  <small>#전환&nbsp;&nbsp;#도약&nbsp;&nbsp;#확신</small>
+                </span>
+                <i class="tarot-thumb thumb-career" aria-hidden="true"><b>2026</b></i>
+              </button>
+
+              <button class="tarot-reading-item" data-open="input" data-service="careerTarot" type="button">
+                <span>
+                  <strong>타로로 읽는 26년의 학업 흐름</strong>
+                  <small>#집중&nbsp;&nbsp;#성취&nbsp;&nbsp;#도약</small>
+                </span>
+                <i class="tarot-thumb thumb-study" aria-hidden="true"><b>2026</b></i>
+              </button>
+
+              <button class="tarot-reading-item" data-open="input" data-service="etcTarot" type="button">
+                <span>
+                  <strong>타로로 읽는 26년의 건강 흐름</strong>
+                  <small>#회복&nbsp;&nbsp;#균형&nbsp;&nbsp;#경고</small>
+                </span>
+                <i class="tarot-thumb thumb-health" aria-hidden="true"><b>2026</b></i>
+              </button>
+
+              <button class="tarot-reading-item" data-open="input" data-service="moneyTarot" type="button">
+                <span>
+                  <strong>타로로 읽는 26년 비즈니스 흐름</strong>
+                  <small>#기회&nbsp;&nbsp;#도전&nbsp;&nbsp;#성과</small>
+                </span>
+                <i class="tarot-thumb thumb-business" aria-hidden="true"><b>2026</b></i>
+              </button>
+
+              <button class="tarot-reading-item" data-open="input" data-service="reunionTarot" type="button">
+                <span>
+                  <strong>내가 없을 때 오가는 나의 얘기는?</strong>
+                  <small>#인간관계&nbsp;&nbsp;#뒷얘기</small>
+                </span>
+                <i class="tarot-thumb thumb-people" aria-hidden="true"></i>
+              </button>
+
+              <button class="tarot-reading-item" data-open="input" data-service="loveTarot" type="button">
+                <span>
+                  <strong>그 사람은 왜 갑자기 멀어졌을까?</strong>
+                  <small>#애정운&nbsp;&nbsp;#그리움</small>
+                </span>
+                <i class="tarot-thumb thumb-distance" aria-hidden="true"></i>
+              </button>
+
+              <button class="tarot-reading-item" data-open="input" data-service="careerTarot" type="button">
+                <span>
+                  <strong>지금 하는 일의 결과는?</strong>
+                  <small>#성취&nbsp;&nbsp;#결말</small>
+                </span>
+                <i class="tarot-thumb thumb-result" aria-hidden="true"></i>
+              </button>
+
+              <button class="tarot-reading-item" data-open="input" data-service="loveTarot" type="button">
+                <span>
+                  <strong>곧 만나게 될 귀인</strong>
+                  <small>#귀인&nbsp;&nbsp;#조력자</small>
+                </span>
+                <i class="tarot-thumb thumb-helper" aria-hidden="true"></i>
+              </button>
+
+              <button class="tarot-reading-item" data-open="input" data-service="reunionTarot" type="button">
+                <span>
+                  <strong>그 사람은 내 SNS를 염탐할까?</strong>
+                  <small>#재회&nbsp;&nbsp;#SNS</small>
+                </span>
+                <i class="tarot-thumb thumb-sns" aria-hidden="true"></i>
+              </button>
+
+              <button class="tarot-reading-item" data-open="input" data-service="etcTarot" type="button">
+                <span>
+                  <strong>곧 있을 이동수</strong>
+                  <small>#새출발&nbsp;&nbsp;#이동수</small>
+                </span>
+                <i class="tarot-thumb thumb-move" aria-hidden="true"></i>
+              </button>
+
+              <button class="tarot-reading-item" data-open="input" data-service="etcTarot" type="button">
+                <span>
+                  <strong>남들이 보는 내 이미지</strong>
+                  <small>#내이미지&nbsp;&nbsp;#타로</small>
+                </span>
+                <i class="tarot-thumb thumb-image" aria-hidden="true"></i>
+              </button>
+
+              <button class="tarot-reading-item" data-open="input" data-service="yearTarot" type="button">
+                <span>
+                  <strong>내 인생 전성기가 오는 순간</strong>
+                  <small>#성공운&nbsp;&nbsp;#전성기</small>
+                </span>
+                <i class="tarot-thumb thumb-peak" aria-hidden="true"></i>
+              </button>
+
+              <button class="tarot-reading-item" data-open="input" data-service="careerTarot" type="button">
+                <span>
+                  <strong>나는 무엇을 잘할까?</strong>
+                  <small>#취업&nbsp;&nbsp;#특기와적성</small>
+                </span>
+                <i class="tarot-thumb thumb-talent" aria-hidden="true"></i>
+              </button>
+
+              <button class="tarot-reading-item" data-open="input" data-service="loveTarot" type="button">
+                <span>
+                  <strong>잘 맞는 이성 찾기</strong>
+                  <small>#짝사랑&nbsp;&nbsp;#운명의연인은?</small>
+                </span>
+                <i class="tarot-thumb thumb-match" aria-hidden="true"></i>
+              </button>
+
+              <button class="tarot-reading-item" data-open="input" data-service="loveTarot" type="button">
+                <span>
+                  <strong>나의 연애는 어떨까?!</strong>
+                  <small>#연애운&nbsp;&nbsp;#나의애정운</small>
+                </span>
+                <i class="tarot-thumb thumb-romance" aria-hidden="true"></i>
+              </button>
+
+              <button class="tarot-reading-item" data-open="input" data-service="etcTarot" type="button">
+                <span>
+                  <strong>내 반려동물은 무슨 생각을 할까?</strong>
+                  <small>#반려동물&nbsp;&nbsp;#속마음</small>
+                </span>
+                <i class="tarot-thumb thumb-pet" aria-hidden="true"></i>
+              </button>
+
+              <button class="tarot-reading-item" data-open="input" data-service="reunionTarot" type="button">
+                <span>
+                  <strong>상대방은 나와 다시 만나고 싶을까?</strong>
+                  <small>#재회운&nbsp;&nbsp;#상대방속마음</small>
+                </span>
+                <i class="tarot-thumb thumb-reunion" aria-hidden="true"></i>
+              </button>
+
+              <button class="tarot-reading-item" data-open="input" data-service="careerTarot" type="button">
+                <span>
+                  <strong>나만 갖고 있는 무기는?</strong>
+                  <small>#취업&nbsp;&nbsp;#나의능력</small>
+                </span>
+                <i class="tarot-thumb thumb-weapon" aria-hidden="true"></i>
+              </button>
+
+              <button class="tarot-reading-item" data-open="input" data-service="loveTarot" type="button">
+                <span>
+                  <strong>나와 딱맞는 연애스타일은 뭘까요?</strong>
+                  <small>#연애운&nbsp;&nbsp;#나의연애스타일</small>
+                </span>
+                <i class="tarot-thumb thumb-style" aria-hidden="true"></i>
+              </button>
+
+              <button class="tarot-reading-item" data-open="input" data-service="etcTarot" type="button">
+                <span>
+                  <strong>무지개다리를 건넌 반려동물이 전하는 말</strong>
+                  <small>#반려동물&nbsp;&nbsp;#무지개다리</small>
+                </span>
+                <i class="tarot-thumb thumb-rainbow" aria-hidden="true"></i>
+              </button>
+
+              <button class="tarot-reading-item" data-open="input" data-service="loveTarot" type="button">
+                <span>
+                  <strong>미래 배우자의 외모와 직업</strong>
+                  <small>#배우자운&nbsp;&nbsp;#배우자외모</small>
+                </span>
+                <i class="tarot-thumb thumb-spouse" aria-hidden="true"></i>
+              </button>
+
+              <button class="tarot-reading-item" data-open="input" data-service="careerTarot" type="button">
+                <span>
+                  <strong>주변 사람들이 도와줄까요?</strong>
+                  <small>#취업&nbsp;&nbsp;#주변환경</small>
+                </span>
+                <i class="tarot-thumb thumb-support" aria-hidden="true"></i>
+              </button>
+
+              <button class="tarot-reading-item" data-open="input" data-service="loveTarot" type="button">
+                <span>
+                  <strong>상대방은 나를 어떻게 생각할까?</strong>
+                  <small>#짝사랑&nbsp;&nbsp;#나의이상형</small>
+                </span>
+                <i class="tarot-thumb thumb-crystal" aria-hidden="true"></i>
+              </button>
+
+              <button class="tarot-reading-item" data-open="input" data-service="etcTarot" type="button">
+                <span>
+                  <strong>마음 건강을 지켜주는 방법</strong>
+                  <small>#마음건강&nbsp;&nbsp;#심리</small>
+                </span>
+                <i class="tarot-thumb thumb-mind" aria-hidden="true"></i>
+              </button>
+
+              <button class="tarot-reading-item" data-open="input" data-service="loveTarot" type="button">
+                <span>
+                  <strong>상대방의 성향과 연애 조언</strong>
+                  <small>#연애운&nbsp;&nbsp;#상대방연애Style</small>
+                </span>
+                <i class="tarot-thumb thumb-star" aria-hidden="true"></i>
+              </button>
+
+              <button class="tarot-reading-item" data-open="input" data-service="careerTarot" type="button">
+                <span>
+                  <strong>취업 시 꼭 주의할 점은?</strong>
+                  <small>#취업&nbsp;&nbsp;#취업주의사항</small>
+                </span>
+                <i class="tarot-thumb thumb-warning" aria-hidden="true"></i>
+              </button>
+
+              <button class="tarot-reading-item" data-open="input" data-service="loveTarot" type="button">
+                <span>
+                  <strong>상대방의 과거에 대하여</strong>
+                  <small>#짝사랑&nbsp;&nbsp;#그사람의과거는?</small>
+                </span>
+                <i class="tarot-thumb thumb-past" aria-hidden="true"></i>
+              </button>
+
+              <button class="tarot-reading-item" data-open="input" data-service="loveTarot" type="button">
+                <span>
+                  <strong>나의 귀인은 언제 올까?</strong>
+                  <small>#성공운&nbsp;&nbsp;#귀인</small>
+                </span>
+                <i class="tarot-thumb thumb-orb" aria-hidden="true"></i>
+              </button>
+
+              <button class="tarot-reading-item" data-open="input" data-service="careerTarot" type="button">
+                <span>
+                  <strong>올해 취업에 성공할 수 있을까?</strong>
+                  <small>#취업&nbsp;&nbsp;#취업성공</small>
+                </span>
+                <i class="tarot-thumb thumb-job" aria-hidden="true"></i>
+              </button>
+
+              <button class="tarot-reading-item" data-open="input" data-service="reunionTarot" type="button">
+                <span>
+                  <strong>나 말고 다른 사람이 있을까?</strong>
+                  <small>#짝사랑&nbsp;&nbsp;#그대는사랑중?</small>
+                </span>
+                <i class="tarot-thumb thumb-third" aria-hidden="true"></i>
+              </button>
+
+              <button class="tarot-reading-item" data-open="input" data-service="loveTarot" type="button">
+                <span>
+                  <strong>꿈꿔온 나의 이상형 알려주세요!</strong>
+                  <small>#연애운&nbsp;&nbsp;#나의이상형</small>
+                </span>
+                <i class="tarot-thumb thumb-question" aria-hidden="true"></i>
+              </button>
+
+              <button class="tarot-reading-item" data-open="input" data-service="reunionTarot" type="button">
+                <span>
+                  <strong>상대를 연인으로 만드는 법</strong>
+                  <small>#짝사랑&nbsp;&nbsp;#짝사랑종결비결</small>
+                </span>
+                <i class="tarot-thumb thumb-light" aria-hidden="true"></i>
+              </button>
+
+              <button class="tarot-reading-item" data-open="input" data-service="loveTarot" type="button">
+                <span>
+                  <strong>나만의 연애 전략을 찾아주세요</strong>
+                  <small>#연애운&nbsp;&nbsp;#맞춤형연애전략</small>
+                </span>
+                <i class="tarot-thumb thumb-strategy" aria-hidden="true"></i>
+              </button>
+
+              <button class="tarot-reading-item" data-open="input" data-service="loveTarot" type="button">
+                <span>
+                  <strong>우리, 결혼할 수 있을까?</strong>
+                  <small>#짝사랑&nbsp;&nbsp;#너와나는어디까지?</small>
+                </span>
+                <i class="tarot-thumb thumb-marriage" aria-hidden="true"></i>
+              </button>
+
+              <button class="tarot-reading-item" data-open="input" data-service="loveTarot" type="button">
+                <span>
+                  <strong>연애할 때 조심해야 할 것은?</strong>
+                  <small>#연애운&nbsp;&nbsp;#연애시주의점</small>
+                </span>
+                <i class="tarot-thumb thumb-caution" aria-hidden="true"></i>
+              </button>
+
+              <button class="tarot-reading-item" data-open="input" data-service="loveTarot" type="button">
+                <span>
+                  <strong>나와 사귀게 될 사람</strong>
+                  <small>#짝사랑&nbsp;&nbsp;#다른인연</small>
+                </span>
+                <i class="tarot-thumb thumb-coming" aria-hidden="true"></i>
+              </button>
+
+              <button class="tarot-reading-item" data-open="input" data-service="loveTarot" type="button">
+                <span>
+                  <strong>지금 내 연애 상태는 어떤가요?</strong>
+                  <small>#연애운&nbsp;&nbsp;#현재연애운</small>
+                </span>
+                <i class="tarot-thumb thumb-now-love" aria-hidden="true"></i>
+              </button>
+
+              <button class="tarot-reading-item" data-open="input" data-service="loveTarot" type="button">
+                <span>
+                  <strong>나만의 매력을 알아봐요</strong>
+                  <small>#연애운&nbsp;&nbsp;#나의매력은?</small>
+                </span>
+                <i class="tarot-thumb thumb-charm" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <section id="input" class="view saju-entry-view">
+        <header class="entry-header">
+          <button class="entry-back" id="entry-back-button" type="button" aria-label="뒤로가기">‹</button>
+          <strong>사주정보 입력</strong>
+          <span></span>
+        </header>
+
+        <form id="birth-form" class="jeomsin-entry-form">
+          <div class="entry-step active" data-entry-step="1">
+            <span class="entry-step-mark">STEP 1 / 4</span>
+            <h1>어떤 이름으로<br />불러 드릴까요?</h1>
+            <label class="line-field">
+              <span>이름</span>
+              <input id="name" value="" maxlength="6" autocomplete="name" />
+              <button class="clear-field" data-clear-target="name" type="button" aria-label="이름 지우기">×</button>
+              <em>한글 최대 6자</em>
+            </label>
+          </div>
+
+          <div class="entry-step" data-entry-step="2">
+            <h1><b id="entry-name-display">당신</b>님의<br />성별을 알려주세요.</h1>
+            <div class="field-row-title">
+              <span>성별</span>
+              <em>대운의 시기는 성별에 따라 달라요!</em>
+            </div>
+            <div class="gender-choice" role="radiogroup" aria-label="성별">
+              <button class="active" data-gender-value="Nam" type="button">남자</button>
+              <button data-gender-value="Nữ" type="button">여자</button>
+            </div>
+            <select id="gender" aria-label="성별">
+              <option value="Nam" selected>Nam</option>
+              <option value="Nữ">Nữ</option>
+            </select>
+          </div>
+
+          <div class="entry-step" data-entry-step="3">
+            <h1>태어난 정보를<br />입력해 주세요.</h1>
+            <div class="line-field split-line-field">
+              <span>태어난 시간</span>
+              <input id="birth-time" type="text" value="09:30" inputmode="numeric" maxlength="5" placeholder="00:00" />
+              <button class="clear-field" data-clear-target="birth-time" type="button" aria-label="시간 지우기">×</button>
+              <label class="unknown-time"><input id="unknown-time" type="checkbox" /> 시간 모름</label>
+            </div>
+
+            <label class="line-field birth-date-field">
+              <span>생년월일</span>
+              <input id="birth-date" type="text" value="1995.06.27" inputmode="numeric" maxlength="10" placeholder="1995.06.27" />
+              <button class="clear-field" data-clear-target="birth-date" type="button" aria-label="생년월일 지우기">×</button>
+              <em>생년월일 8자리</em>
+            </label>
+
+            <div class="calendar-toggle" aria-label="양력 음력 선택">
+              <small>사주분석은 만 나이로 적용돼요</small>
+              <button class="active" type="button">양력</button>
+              <button type="button" disabled>음력</button>
+            </div>
+          </div>
+
+          <div class="entry-step" data-entry-step="4">
+            <h1>입력한 정보가<br />맞는지 확인해 주세요.</h1>
+            <div class="entry-review">
+              <dl>
+                <dt>이름</dt>
+                <dd id="review-name">-</dd>
+              </dl>
+              <dl>
+                <dt>성별</dt>
+                <dd id="review-gender">-</dd>
+              </dl>
+              <dl>
+                <dt>생년월일</dt>
+                <dd id="review-date">-</dd>
+              </dl>
+              <dl>
+                <dt>태어난 시간</dt>
+                <dd id="review-time">-</dd>
+              </dl>
+            </div>
+          </div>
+
+          <button id="entry-next-button" class="entry-bottom-button" type="button" disabled>정확한 이름을 입력해 주세요.</button>
+        </form>
+      </section>
+
+      <div class="sheet-overlay" id="entry-start-sheet" hidden>
+        <section class="bottom-sheet start-sheet" role="dialog" aria-modal="true" aria-label="사주 시작">
+          <button class="sheet-close" data-close-sheet="entry-start-sheet" type="button" aria-label="닫기">×</button>
+          <h2>당신의 앞날이 궁금하다면?</h2>
+          <p>지금 사주정보를 입력하고<br />나만의 흐름을 알아봐요!</p>
+          <button class="sheet-primary" id="start-entry-flow" type="button">점신 시작하기</button>
+          <button class="sheet-secondary" type="button">기존 회원 로그인하기</button>
+        </section>
+      </div>
+
+      <div class="sheet-overlay" id="terms-sheet" hidden>
+        <section class="bottom-sheet terms-sheet" role="dialog" aria-modal="true" aria-label="이용약관 동의">
+          <button class="sheet-close" data-close-sheet="terms-sheet" type="button" aria-label="닫기">×</button>
+          <h2>이용약관 동의</h2>
+          <p>아래 시작하기를 누르면 서비스 이용약관 및 개인정보 처리방침에 동의하는 것으로 간주합니다.</p>
+          <button class="sheet-primary sticky-sheet-button" id="agree-start-button" type="button">시작하기</button>
+        </section>
+      </div>
+
+      <div class="sheet-overlay" id="sns-sheet" hidden>
+        <section class="bottom-sheet sns-sheet" role="dialog" aria-modal="true" aria-label="SNS 연동">
+          <button class="sheet-close" id="skip-sns-button" type="button" aria-label="닫기">×</button>
+          <h2>SNS 연동하기</h2>
+          <p>연동하지 않으면, 사주정보가 저장되지 않아요 😢<br />단 한 번의 연동으로 더 편리하게 사용하세요!</p>
+          <div class="sns-login-row" aria-label="SNS 로그인">
+            <button class="sns-naver" data-sns-login onclick="window.tuviSnsFallback(event)" type="button">N</button>
+            <button class="sns-kakao" data-sns-login onclick="window.tuviSnsFallback(event)" type="button">●</button>
+            <button class="sns-google" data-sns-login onclick="window.tuviSnsFallback(event)" type="button">G</button>
+            <button class="sns-apple" data-sns-login onclick="window.tuviSnsFallback(event)" type="button"></button>
+          </div>
+          <button class="sns-primary-button" data-sns-login onclick="window.tuviSnsFallback(event)" type="button">SNS 연동하고 계속하기</button>
+          <button class="sns-skip-button" data-sns-skip onclick="window.tuviSnsFallback(event)" type="button">나중에 할게요</button>
+        </section>
+      </div>
+
+      <section id="analysis" class="view analysis-view" aria-live="polite">
+        <h1><span id="analysis-name">토댕이</span>님의 사주 운세를 분석하고 있어요!</h1>
+
+        <div class="analysis-ad-card" aria-label="광고">
+          <div class="analysis-ad-menu" aria-hidden="true"><span></span><i></i></div>
+          <article>
+            <div class="ad-product-image ad-product-blue"></div>
+            <div>
+              <strong>Tủ mát Sanaky<br />VH-168KL 160 lít</strong>
+              <b>7.090.000đ <s>9.440.000đ</s></b>
+            </div>
+            <button type="button" aria-label="상품 보기">›</button>
+          </article>
+          <article>
+            <div class="ad-product-image ad-product-dark"></div>
+            <div>
+              <strong>Tủ mát Darling 360 lít<br />DL-3600A/3600AL Kính LOW-E</strong>
+              <b>7.790.000đ</b>
+            </div>
+            <button type="button" aria-label="상품 보기">›</button>
+          </article>
+          <article>
+            <div class="ad-product-image ad-product-light"></div>
+            <div>
+              <strong>Tủ mát inverter Darling<br />DL-5000A3L/DL-5000A3 500 lít</strong>
+              <b>10.890.000đ</b>
+            </div>
+            <button type="button" aria-label="상품 보기">›</button>
+          </article>
+          <span class="analysis-ad-brand">META.vn</span>
+        </div>
+
+        <div class="analysis-message">오늘 <strong id="analysis-count">791,444</strong>명이 운세를 확인했어요!</div>
+        <div class="analysis-tip"><b>Tip</b> 어떻게 살지? 인생의 방향을 모르겠다면 "토정비결"을 이용해 보세요!</div>
+        <div class="analysis-message">사주분석이 완료되었습니다. 🥰</div>
+
+        <div class="analysis-progress">
+          <span>운세를 풀이하고 있어요 ... <b id="analysis-progress-text">98</b>%</span>
+          <i id="analysis-progress-bar"></i>
+        </div>
+      </section>
+
+      <section id="result" class="view">
+        <header class="page-header">
+          <button class="back-button" data-open="home" type="button">‹</button>
+          <strong id="result-title">신년운세</strong>
+          <button class="icon-button" id="share-button" type="button">↗</button>
+        </header>
+
+        <section class="year-fortune-report" aria-label="신년운세 상세 풀이">
+          <div class="year-title-banner">Title Banner</div>
+
+          <article class="year-reading-section">
+            <h2>총운풀이</h2>
+            <p id="year-total-copy-1">올해는 감정의 기복을 다루는 힘이 중요한 해입니다. 마음이 앞서면 판단이 흐려질 수 있지만, 기준을 세우고 꾸준히 움직이면 주변의 인정과 실질적인 성과를 함께 얻을 수 있습니다.</p>
+            <p id="year-total-copy-2">특히 올해는 자기 계발과 실력 향상에 힘을 쓸수록 운이 열립니다. 공부, 자격, 기술, 업무 역량처럼 시간이 쌓여 결과가 나는 일에 집중하면 연말로 갈수록 확실한 변화가 보입니다.</p>
+            <p id="year-total-copy-3">관계에서는 속마음을 혼자 오래 품기보다 적절히 표현하는 것이 좋습니다. 감정을 건강하게 나누면 가까운 사람과의 심리적 거리가 줄고, 새로운 인연도 자연스럽게 들어옵니다.</p>
+            <p id="year-total-copy-4">다만 연초에 세운 꿈을 끝까지 유지하기는 쉽지 않을 수 있습니다. 큰 목표를 한 번에 이루려 하기보다, 월별로 작은 성과를 쌓아가는 방식이 올해의 흐름에 더 잘 맞습니다.</p>
+            <p id="year-total-copy-5">올해는 초반보다 중반 이후에 운의 색이 더 분명해집니다. 처음에는 내가 제대로 가고 있는지 확신이 부족할 수 있지만, 포기하지 않고 같은 방향을 유지하면 주변에서 먼저 변화를 알아보게 됩니다.</p>
+            <p id="year-total-copy-6">돈, 일, 관계 모두에서 한 번에 큰 결과를 기대하기보다 손에 잡히는 작은 이익을 꾸준히 모으는 것이 좋습니다. 올해의 운은 갑작스러운 반전보다 성실하게 쌓아 올린 기반 위에서 강하게 작용합니다.</p>
+          </article>
+
+          <article class="year-reading-section">
+            <h2>가장 좋은 것</h2>
+            <p id="year-best-copy-1">올해는 학업운과 성장운이 좋은 시기입니다. 배우고 익히는 일, 시험 준비, 자격 취득, 새로운 업무 기술 습득에 힘을 쏟으면 기대보다 좋은 결과를 얻을 가능성이 큽니다.</p>
+            <p id="year-best-copy-2">내 능력이 사람들에게 인정받고, 맡은 역할이 넓어지는 일이 생길 수 있습니다. 목표를 구체적으로 세우고 꾸준히 밀고 나가면 내가 생각한 것보다 빠르게 위치가 올라갑니다.</p>
+            <p id="year-best-copy-3">특히 문서, 공부, 발표, 정리, 기획처럼 머리를 쓰는 일에서 운이 살아납니다. 평소 어렵게 느꼈던 분야도 올해는 반복해서 다루면 내 것으로 만들 수 있습니다.</p>
+          </article>
+
+          <article class="year-reading-section">
+            <h2>주의가 필요한 것</h2>
+            <p id="year-caution-copy-1">올해는 마음의 흔들림이 커질 수 있으므로 감정 조절이 중요합니다. 갑작스러운 우울감이나 공허함이 찾아올 수 있으니, 혼자 참기보다 생활 리듬과 휴식 시간을 먼저 챙기세요.</p>
+            <p id="year-caution-copy-2">또한 사람 관계에서 매너리즘이나 거리감이 생기기 쉽습니다. 상대의 반응에 과하게 흔들리기보다 현실적으로 내가 해야 할 일에 집중하는 태도가 올해를 안정적으로 지나가게 합니다.</p>
+            <p id="year-caution-copy-3">올해는 생각이 많아지는 만큼 오해도 쉽게 커질 수 있습니다. 아직 일어나지 않은 일을 미리 걱정해 판단을 흐리지 않도록, 확인된 사실과 내 감정을 따로 나누어 보는 습관이 필요합니다.</p>
+          </article>
+
+          <article class="year-reading-section">
+            <h2>월별 흐름</h2>
+            <p id="year-month-copy-1">연초에는 준비와 정리의 기운이 강합니다. 새로운 일을 시작하더라도 바로 성과를 보려 하기보다 기준을 세우고 주변 환경을 정돈하는 것이 먼저입니다.</p>
+            <p id="year-month-copy-2">중반에는 사람과 기회가 함께 들어오는 흐름입니다. 다만 모든 제안을 받아들이면 오히려 피로가 쌓이므로, 내 목표와 맞는 일만 선별해야 합니다.</p>
+            <p id="year-month-copy-3">연말에는 그동안 쌓아둔 결과를 확인하는 시기입니다. 큰 결실이 한 번에 오지 않더라도, 내가 유지한 습관과 선택이 다음 해의 운을 결정하는 기반이 됩니다.</p>
+          </article>
+
+          <article class="year-reading-section">
+            <h2>올해의 조언</h2>
+            <p id="year-advice-copy">올해는 생각이 많아지는 시기입니다. 상상과 걱정이 커지면 현실적인 판단이 늦어질 수 있으니, 계획을 크게 세우되 실행은 작게 나누세요. 매달 하나씩 분명한 결과를 남기는 것이 가장 좋은 개운법입니다.</p>
+          </article>
+
+          <section class="year-share-panel" aria-label="운세 공유">
+            <h2>나의 운세를 공유해보세요!</h2>
+            <p><strong id="year-share-count">2,049,870</strong>명이 공유하였습니다.</p>
+            <button type="button" id="year-share-button">공유하기</button>
+          </section>
+
+          <section class="year-more-panel" aria-label="다른 운세 추천">
+            <span>APP 전용</span>
+            <h2>그 외 다양한 운들을<br />확인해 보세요!</h2>
+            <div class="year-more-grid">
+              <button data-open="input" data-service="traditional" data-skip-start="true" type="button">평생운세</button>
+              <button data-open="input" data-service="secret" data-skip-start="true" type="button">대운풀이</button>
+              <button data-open="input" data-service="moneyTarot" data-skip-start="true" type="button">재물운</button>
+              <button data-open="input" data-service="loveTarot" data-skip-start="true" type="button">애정운</button>
+              <button data-open="input" data-service="couple" data-skip-start="true" type="button">결혼운</button>
+              <button data-open="input" data-service="careerTarot" data-skip-start="true" type="button">직업운</button>
+              <button data-open="input" data-service="etcTarot" data-skip-start="true" type="button">사업운</button>
+              <button data-open="input" data-service="psychology" data-skip-start="true" type="button">친구운</button>
+              <button data-open="input" data-service="today" data-skip-start="true" type="button">건강운</button>
+              <button data-open="input" data-service="year" data-skip-start="true" type="button">미리보는 2027년<br />신년운세</button>
+            </div>
+          </section>
+        </section>
+
+        <section class="today-fortune-result" aria-label="오늘의 운세 결과">
+          <nav class="today-fortune-tabs" aria-label="운세 종류">
+            <button class="active" type="button">오늘의 운세</button>
+            <button type="button">띠 운세</button>
+            <button type="button">별자리 운세</button>
+          </nav>
+
+          <section class="today-score-panel">
+            <div class="today-score-badge"><strong id="today-score-number">90</strong><i></i></div>
+            <p id="today-score-copy">기동력과 순발력을 발휘해야 하는 하루입니다.</p>
+          </section>
+
+          <nav class="today-time-tabs" aria-label="시간대">
+            <button class="active" type="button">총운</button>
+            <button type="button">오전</button>
+            <button type="button">오후</button>
+            <button type="button">밤</button>
+          </nav>
+
+          <section class="analysis-report-card" aria-label="오늘의 운세 분석글">
+            <div class="report-premium-top">
+              <span>PREMIUM SAJU REPORT</span>
+              <strong id="report-score-pill">오늘 운세 90점</strong>
+            </div>
+            <h2><b id="report-name">토댕이</b>님의 오늘 운세 정밀 분석</h2>
+            <p id="report-summary">오늘은 빠른 결정보다 우선순위를 정리하는 힘이 더 크게 작용합니다. 주변의 말에 휘둘리기보다 내가 해야 할 일을 하나씩 끝내면 오후부터 운의 흐름이 안정됩니다.</p>
+            <div class="report-flow-band">
+              <span>오전</span>
+              <i></i>
+              <span>오후 상승</span>
+              <i></i>
+              <span>밤 안정</span>
+            </div>
+            <div class="report-point-grid">
+              <article>
+                <em>01</em>
+                <strong>오늘의 핵심</strong>
+                <p id="report-key">작게 시작하고 확실하게 마무리하세요.</p>
+              </article>
+              <article>
+                <em>02</em>
+                <strong>주의할 것</strong>
+                <p id="report-caution">감정적으로 바로 답하거나 약속을 늘리는 일은 피하는 편이 좋습니다.</p>
+              </article>
+            </div>
+            <div class="report-advice-box">
+              <strong>오늘의 실천 조언</strong>
+              <p id="report-action">중요한 연락은 오후에 하고, 돈이 나가는 결정은 한 번 더 확인하세요.</p>
+            </div>
+          </section>
+
+          <section class="today-radar-card" aria-label="운세 그래프">
+            <svg id="today-radar-chart" viewBox="0 0 320 320" role="img" aria-label="오늘의 운세 육각 그래프">
+              <g class="radar-grid">
+                <polygon points="160,136.4 180.4,148.2 180.4,171.8 160,183.6 139.6,171.8 139.6,148.2"></polygon>
+                <polygon points="160,112.8 200.9,136.4 200.9,183.6 160,207.2 119.1,183.6 119.1,136.4"></polygon>
+                <polygon points="160,89.2 221.3,124.6 221.3,195.4 160,230.8 98.7,195.4 98.7,124.6"></polygon>
+                <polygon points="160,65.6 241.8,112.8 241.8,207.2 160,254.4 78.2,207.2 78.2,112.8"></polygon>
+                <polygon points="160,42 262.2,101 262.2,219 160,278 57.8,219 57.8,101"></polygon>
+                <line x1="160" y1="160" x2="160" y2="42"></line>
+                <line x1="160" y1="160" x2="262.2" y2="101"></line>
+                <line x1="160" y1="160" x2="262.2" y2="219"></line>
+                <line x1="160" y1="160" x2="160" y2="278"></line>
+                <line x1="160" y1="160" x2="57.8" y2="219"></line>
+                <line x1="160" y1="160" x2="57.8" y2="101"></line>
+              </g>
+              <polygon class="radar-fill" points="160,53.8 241.8,112.8 221.3,195.4 160,242.6 98.7,195.4 98.7,124.6" />
+              <polygon class="radar-line" points="160,53.8 241.8,112.8 221.3,195.4 160,242.6 98.7,195.4 98.7,124.6" />
+              <g class="radar-points">
+                <circle cx="160" cy="42" r="3.5"></circle>
+                <circle cx="262.2" cy="101" r="3.5"></circle>
+                <circle cx="262.2" cy="219" r="3.5"></circle>
+                <circle cx="160" cy="278" r="3.5"></circle>
+                <circle cx="57.8" cy="219" r="3.5"></circle>
+                <circle cx="57.8" cy="101" r="3.5"></circle>
+              </g>
+            </svg>
+            <div class="radar-css-graph" id="today-radar-fallback" aria-hidden="true">
+              <span class="radar-css-ring ring-1"></span>
+              <span class="radar-css-ring ring-2"></span>
+              <span class="radar-css-ring ring-3"></span>
+              <span class="radar-css-ring ring-4"></span>
+              <span class="radar-css-ring ring-5"></span>
+              <span class="radar-css-axis axis-1"></span>
+              <span class="radar-css-axis axis-2"></span>
+              <span class="radar-css-axis axis-3"></span>
+              <span class="radar-css-axis axis-4"></span>
+              <span class="radar-css-axis axis-5"></span>
+              <span class="radar-css-axis axis-6"></span>
+              <span class="radar-css-fill"></span>
+              <span class="radar-css-dot dot-1"></span>
+              <span class="radar-css-dot dot-2"></span>
+              <span class="radar-css-dot dot-3"></span>
+              <span class="radar-css-dot dot-4"></span>
+              <span class="radar-css-dot dot-5"></span>
+              <span class="radar-css-dot dot-6"></span>
+            </div>
+            <span class="radar-label radar-label-top">총운</span>
+            <span class="radar-label radar-label-right-top">재물운</span>
+            <span class="radar-label radar-label-right-bottom">연애운</span>
+            <span class="radar-label radar-label-bottom">사업운</span>
+            <span class="radar-label radar-label-left-bottom">건강운</span>
+            <span class="radar-label radar-label-left-top">학업운</span>
+          </section>
+          <section class="zodiac-fortune-panel" aria-label="띠 운세 결과">
+            <div class="zodiac-icon-wrap"><span class="zodiac-pig-icon" aria-hidden="true"></span></div>
+            <h2 id="zodiac-title">돼지띠 해(亥)</h2>
+            <p id="zodiac-summary">능력이 부족하니 알찬 결실을 거두기가 만무한 실정이다.</p>
+            <article class="zodiac-year-card">
+              <h3 id="zodiac-year">59년생</h3>
+              <strong id="zodiac-headline">지혜가 특출하다 하여도 이를 인정해주는 사람이 없으니 그 빛을 바랄 수가 없다</strong>
+              <p id="zodiac-body">오늘은 남의 말에 귀를 기울여야 합니다. 당신이 내리는 선택은 그 어느 것도 도움이 되지 못할 수 있습니다. 물론 돌아가는 길을 선택해도 무방하다면 할 말은 없습니다.</p>
+            </article>
+          </section>
+
+          <section class="star-fortune-panel" aria-label="별자리 운세 결과">
+            <div class="star-divider"></div>
+            <div class="star-product">
+              <p>지금 내 상황에 꼭 필요한</p>
+              <h2><span>점신 부적</span>은?</h2>
+              <div class="star-product-row">
+                <div class="talisman-card" aria-hidden="true"><i></i></div>
+                <div class="star-product-copy">
+                  <strong>만사형통부</strong>
+                  <span>모든 일이 뜻하는 대로<br />이루어지길 기원하는 부적</span>
+                  <button type="button">구매하기</button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="today-detail-feed" aria-label="오늘의 운세 상세">
+            <div class="detail-unlock-card">
+              <div>
+                <span>광고 보상</span>
+                <strong>광고 보고 운세 자세히 보기</strong>
+                <p>총운, 재물운, 연애운, 사업운, 건강운, 학업운 상세 해석이 열려요.</p>
+              </div>
+              <button type="button">상세 열기</button>
+            </div>
+
+            <div class="fortune-detail-list">
+              <article>
+                <h3>총운</h3>
+                <p id="detail-total">오늘은 빠르게 움직이기보다 우선순위를 정리할수록 운이 좋아집니다.</p>
+              </article>
+              <article>
+                <h3>재물운</h3>
+                <p id="detail-money">작은 지출을 줄이고 이미 가진 자원을 점검하면 좋은 흐름이 생깁니다.</p>
+              </article>
+              <article>
+                <h3>연애운</h3>
+                <p id="detail-love">표현은 짧고 분명하게, 상대의 반응은 천천히 살피는 편이 좋습니다.</p>
+              </article>
+            </div>
+
+            <div class="lucky-things">
+              <h3>행운을 가져오는 것들</h3>
+              <div>
+                <span><b id="lucky-color-chip"></b>행운 색상 <strong id="lucky-color">노랑</strong></span>
+                <span>행운 시간 <strong id="lucky-time">오후 3시</strong></span>
+                <span>행운 방향 <strong id="lucky-direction">동쪽</strong></span>
+              </div>
+            </div>
+
+            <div class="reward-consult-row">
+              <button class="reward-button" type="button">복주머니 받기</button>
+              <button class="consult-button" data-open="guide" type="button">상담으로 확인하기</button>
+            </div>
+          </section>
+        </section>
+
+        <section class="service-analysis-card" aria-label="서비스별 사주 분석 리포트">
+          <div class="service-analysis-top">
+            <span id="service-analysis-kicker">SAJU ENGINE</span>
+            <strong id="service-analysis-score">88점</strong>
+          </div>
+          <h2 id="service-analysis-title">신년운세 정밀 분석</h2>
+          <p id="service-analysis-summary">올해는 무리하게 방향을 넓히기보다 하나의 흐름을 오래 가져갈수록 성과가 커지는 운입니다.</p>
+          <div class="service-metric-grid">
+            <article>
+              <span id="service-metric-a-label">기회운</span>
+              <b id="service-metric-a">87</b>
+            </article>
+            <article>
+              <span id="service-metric-b-label">주의운</span>
+              <b id="service-metric-b">64</b>
+            </article>
+            <article>
+              <span id="service-metric-c-label">실행운</span>
+              <b id="service-metric-c">78</b>
+            </article>
+          </div>
+          <div class="service-analysis-body">
+            <article>
+              <strong>분석 포인트</strong>
+              <p id="service-analysis-focus">지금은 기세보다 구조가 중요합니다. 먼저 루틴과 기준을 정리하세요.</p>
+            </article>
+            <article>
+              <strong>조심할 부분</strong>
+              <p id="service-analysis-risk">한 번에 모든 것을 바꾸려 하면 운의 중심이 흔들릴 수 있습니다.</p>
+            </article>
+            <article>
+              <strong>실천 조언</strong>
+              <p id="service-analysis-action">중요한 결정은 기록으로 남기고, 반복 가능한 선택부터 시작하세요.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="paid-report-card" aria-label="프리미엄 상세 운세 리포트">
+          <div class="paid-report-hero">
+            <div>
+              <span id="paid-report-kicker">PREMIUM SAJU REPORT</span>
+              <h2 id="paid-report-title">상세 운세 분석</h2>
+              <p id="paid-report-lead">지금 선택한 항목의 흐름을 더 깊게 분석하고 있습니다.</p>
+            </div>
+            <strong id="paid-report-score">88점</strong>
+          </div>
+
+          <div class="paid-report-index">
+            <article>
+              <span>핵심 테마</span>
+              <b id="paid-report-theme">방향 정리</b>
+            </article>
+            <article>
+              <span>작용 시기</span>
+              <b id="paid-report-window">오후부터 안정</b>
+            </article>
+            <article>
+              <span>운을 여는 열쇠</span>
+              <b id="paid-report-key">작은 실행</b>
+            </article>
+          </div>
+
+          <div class="paid-report-section-grid">
+            <article class="paid-report-section">
+              <h3 id="paid-report-overview-title">전체 흐름</h3>
+              <p id="paid-report-overview-1"></p>
+              <p id="paid-report-overview-2"></p>
+            </article>
+            <article class="paid-report-section">
+              <h3 id="paid-report-opportunity-title">좋아지는 부분</h3>
+              <p id="paid-report-opportunity-1"></p>
+              <p id="paid-report-opportunity-2"></p>
+            </article>
+            <article class="paid-report-section">
+              <h3 id="paid-report-caution-title">주의할 부분</h3>
+              <p id="paid-report-caution-1"></p>
+              <p id="paid-report-caution-2"></p>
+            </article>
+            <article class="paid-report-section paid-report-practice">
+              <h3 id="paid-report-practice-title">실전 조언</h3>
+              <p id="paid-report-practice-1"></p>
+              <ul id="paid-report-checklist"></ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="result-profile-card">
+          <div>
+            <strong><span id="profile-name">토댕이</span> <small>(본인)</small> <em id="profile-gender">남성</em></strong>
+            <p id="profile-meta">1995.06.27 (양력) · 11시 30분</p>
+          </div>
+          <button data-open="input" data-skip-start="true" type="button">변경</button>
+        </section>
+
+        <section class="summary-triplet jeomsin-summary">
+          <article><b id="main-element">土</b><strong id="main-element-name">토</strong><span>나의 오행</span></article>
+          <article class="animal-card"><b id="main-animal">🐮</b><strong id="main-animal-name">노란 소</strong><span>일주 동물</span></article>
+          <article><b id="main-god">偏印</b><strong id="main-god-name">편인</strong><span>타고난 성향</span></article>
+        </section>
+
+        <section class="result-block result-pillar-preview">
+          <div class="pillar-grid jeomsin-pillar-grid" id="result-pillar-grid"></div>
+          <div class="mini-table jeomsin-mini-table" id="result-mini-table"></div>
+          <button class="manse-open-button" data-open="manse" type="button">만세력 보기</button>
+        </section>
+      </section>
+
+      <section id="manse" class="view manse-view">
+        <header class="page-header">
+          <button class="back-button" data-open="result" type="button">‹</button>
+          <strong>만세력</strong>
+          <button class="icon-button" type="button">⌯</button>
+        </header>
+
+        <section class="manse-profile-hero">
+          <div class="manse-avatar"><span id="manse-animal">🐮</span><button type="button">↻</button></div>
+          <h1 id="manse-name">토댕이</h1>
+          <p><span id="manse-type">기축 (노란 소)</span> <button type="button">?</button> · <span id="manse-gender">남성</span></p>
+          <div class="manse-date-box">
+            <dl><dt>양력</dt><dd id="manse-solar-date">1995.06.27 (11:30)</dd></dl>
+            <dl><dt>음력</dt><dd id="manse-lunar-date">1995.05.30 (평달)</dd></dl>
+            <dl><dt>하지</dt><dd id="manse-season-date">1995.06.06 (12:43)</dd></dl>
+          </div>
+          <div class="manse-actions">
+            <button type="button">↓ 이미지 저장</button>
+            <button type="button">▣ 일진 달력</button>
+          </div>
+          <nav class="manse-tabs" aria-label="만세력 메뉴">
+            <button class="active" type="button">사주원국</button>
+            <button type="button">사주관계</button>
+            <button type="button">오행과 십성</button>
+            <button type="button">신강신약</button>
+            <button type="button">대운수</button>
+          </nav>
+        </section>
+
+        <section class="result-block manse-original">
+          <div class="section-heading ko-heading">
+            <h2>사주원국 <button type="button">?</button></h2>
+          </div>
+          <div class="pillar-grid jeomsin-pillar-grid" id="pillar-grid"></div>
+          <div class="mini-table jeomsin-mini-table" id="mini-table"></div>
+        </section>
+
+        <section class="result-block relation-block">
+          <div class="section-heading ko-heading">
+            <h2>사주관계 <button type="button">?</button></h2>
+          </div>
+          <div class="relation-tabs"><button class="active" type="button">천간과 지지</button><button type="button">신살과 길성</button></div>
+          <div class="relation-diagram" id="relation-diagram"></div>
+          <div class="salsin-table" id="salsin-table"></div>
+        </section>
+
+        <section class="result-block element-analysis-block">
+          <div class="section-heading ko-heading">
+            <h2>오행과 십성 <button type="button">?</button></h2>
+          </div>
+          <div class="five-flow">
+            <span>생 <b>→</b></span>
+            <span>극 <b>⇢</b></span>
+          </div>
+          <div class="five-orbit" id="five-orbit"></div>
+          <div class="element-list" id="element-list"></div>
+        </section>
+
+        <section class="result-block strength-block">
+          <div class="section-heading ko-heading">
+            <h2>신강신약 <button type="button">?</button></h2>
+          </div>
+          <div class="gauge" id="strength-gauge" style="--strength: 64%"><strong id="strength-score">64</strong><span id="strength-label">신강한 사주입니다.</span></div>
+          <div class="strength-legend"><span><i></i>신약<br /><em>(0~39)</em></span><span><i></i>중화<br /><em>(40~60)</em></span><span><i></i>신강<br /><em>(61~)</em></span></div>
+          <p id="strength-copy">내면의 힘과 회복 탄력을 보여주는 지표입니다.</p>
+        </section>
+
+        <section class="result-block luck-block">
+          <div class="section-heading ko-heading">
+            <h2>대운수 : <span id="big-luck-number">7 순행</span> <button type="button">?</button></h2>
+          </div>
+          <h3>대운</h3>
+          <div class="luck-strip" id="decade-strip"></div>
+          <h3>세운</h3>
+          <div class="luck-strip" id="year-strip"></div>
+          <h3>월운</h3>
+          <div class="luck-strip" id="month-strip"></div>
+        </section>
+
+        <section class="manse-consult-card">
+          <span>혼자 해석하기 어려운 만세력?</span>
+          <strong>점신 상담으로 해결!</strong>
+          <button type="button">나를 위한 맞춤 사주풀이<br />지금 바로, [운세 상담]</button>
+        </section>
+      </section>
+
+      <section id="guide" class="view consult-page">
+        <header class="consult-header">
+          <h1>상담</h1>
+          <button class="coupon-button" type="button" aria-label="쿠폰">
+            <span></span>
+          </button>
+        </header>
+
+        <section class="consult-carousel" aria-label="추천 상담">
+          <div class="consult-banner-track">
+            <article class="consult-banner theme-green">
+              <button class="consult-all" type="button">전체보기 +</button>
+              <div class="consult-banner-copy">
+                <span>관계 회복 리딩</span>
+                <h2>우리 부부의<br />화해 기술</h2>
+                <button data-open="input" data-service="loveTarot" type="button">타로 상담으로 확인</button>
+              </div>
+              <div class="consult-visual" aria-hidden="true">
+                <i class="consult-card c1"></i>
+                <i class="consult-card c2"></i>
+                <i class="consult-person p1"></i>
+                <i class="consult-person p2"></i>
+              </div>
+            </article>
+
+            <article class="consult-banner theme-blue">
+              <button class="consult-all" type="button">전체보기 +</button>
+              <div class="consult-banner-copy">
+                <span>운세</span>
+                <h2>인생이 잘 풀릴 수 있게</h2>
+                <p>어려움을 해결하는 힌트를 얻어가세요</p>
+                <button data-open="input" data-service="year" type="button">운세 상담 보기</button>
+              </div>
+              <div class="consult-visual" aria-hidden="true">
+                <i class="consult-person solo woman"></i>
+              </div>
+            </article>
+
+            <article class="consult-banner theme-purple">
+              <button class="consult-all" type="button">전체보기 +</button>
+              <div class="consult-banner-copy">
+                <span>타로</span>
+                <h2>혼자 고민,<br />같이 풀어요</h2>
+                <p>타로를 펼치면 방법을 찾을 수 있어요</p>
+                <button data-open="tarot" data-nav="tarot" type="button">타로 상담 보기</button>
+              </div>
+              <div class="consult-visual" aria-hidden="true">
+                <i class="consult-person solo man"></i>
+              </div>
+            </article>
+          </div>
+          <div class="consult-dots" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </section>
+
+        <section class="consult-menu" aria-label="상담 메뉴">
+          <button data-open="input" data-service="year" type="button">
+            <span class="consult-icon icon-fortune"></span>
+            <strong>운세상담</strong>
+          </button>
+          <button data-open="tarot" data-nav="tarot" type="button">
+            <span class="consult-icon icon-tarot"></span>
+            <strong>타로상담</strong>
+          </button>
+          <button data-open="input" data-service="secret" type="button">
+            <span class="consult-icon icon-shin"></span>
+            <strong>신점상담</strong>
+          </button>
+          <button data-open="input" data-service="psychology" type="button">
+            <span class="consult-icon icon-mind"></span>
+            <strong>심리상담</strong>
+          </button>
+          <button data-open="input" data-service="today" type="button">
+            <span class="consult-icon icon-free"></span>
+            <strong>무료고민상담</strong>
+          </button>
+          <button data-open="input" data-service="tomorrow" type="button">
+            <span class="consult-icon icon-three"></span>
+            <strong>3분무료상담</strong>
+          </button>
+          <button data-open="home" data-nav="year" type="button">
+            <span class="consult-icon icon-guide"></span>
+            <strong>이용가이드</strong>
+          </button>
+        </section>
+        <header class="page-header">
+          <button class="back-button" data-open="home" type="button">‹</button>
+          <strong>Hướng dẫn</strong>
+          <span></span>
+        </header>
+
+        <section class="guide-hero">
+          <span class="eyebrow">Free first</span>
+          <h1>tuvi.life mở kết quả miễn phí cho người dùng</h1>
+          <p>Mục tiêu trước mắt là tạo thói quen xem vận mỗi ngày. Khi có người dùng ổn định, có thể thử quảng cáo nhẹ hoặc tài trợ phù hợp.</p>
+        </section>
+
+        <section class="insight-card">
+          <div class="step-list">
+            <article><b>01</b><strong>Vào trang</strong><span>Không cần cài app.</span></article>
+            <article><b>02</b><strong>Nhập ngày sinh</strong><span>Giờ sinh giúp kết quả sát hơn.</span></article>
+            <article><b>03</b><strong>Đọc và chia sẻ</strong><span>Nút chia sẻ tạo đoạn tóm tắt ngắn.</span></article>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Primary menu">
+      <button class="active" data-open="home" data-nav="year" type="button">
+        <span class="nav-icon nav-year" aria-hidden="true"></span>
+        <b>2026년 운세</b>
+      </button>
+      <button data-open="tarot" data-nav="tarot" type="button">
+        <span class="nav-icon nav-tarot" aria-hidden="true"></span>
+        <b>타로</b>
+      </button>
+      <button data-open="guide" data-nav="guide" type="button">
+        <span class="nav-icon nav-chat" aria-hidden="true"></span>
+        <b>상담</b>
+      </button>
+    </nav>
+
+    <script>
+      window.tuviSnsFallback = function (event) {
+        if (event) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        const snsSheet = document.getElementById("sns-sheet");
+        if (snsSheet) {
+          snsSheet.classList.remove("open");
+          snsSheet.hidden = true;
+        }
+        document.body.dataset.activeView = "analysis";
+        document.querySelectorAll(".view").forEach((view) => {
+          view.classList.toggle("active", view.id === "analysis");
+        });
+        const progressText = document.getElementById("analysis-progress-text");
+        const progressBar = document.getElementById("analysis-progress-bar");
+        let progress = 92;
+        if (progressText) progressText.textContent = progress;
+        if (progressBar) progressBar.style.setProperty("--analysis-progress", progress + "%");
+        const progressTimer = window.setInterval(function () {
+          progress = Math.min(100, progress + 2);
+          if (progressText) progressText.textContent = progress;
+          if (progressBar) progressBar.style.setProperty("--analysis-progress", progress + "%");
+          if (progress >= 100) window.clearInterval(progressTimer);
+        }, 220);
+        if (typeof window.tuviContinueFromSns === "function") {
+          window.setTimeout(function () {
+            window.tuviContinueFromSns();
+          }, 20);
+        }
+        window.setTimeout(function () {
+          window.clearInterval(progressTimer);
+          if (progressText) progressText.textContent = "100";
+          if (progressBar) progressBar.style.setProperty("--analysis-progress", "100%");
+          const result = document.getElementById("result");
+          if (result) {
+            result.classList.toggle("today-result-view", result.dataset.service === "today");
+            result.classList.toggle("year-result-view", result.dataset.service === "year");
+          }
+          document.body.dataset.activeView = "result";
+          document.querySelectorAll(".view").forEach((view) => {
+            view.classList.toggle("active", view.id === "result");
+          });
+        }, 2300);
+      };
+      document.addEventListener("click", function (event) {
+        if (!event.target.closest("[data-sns-login], [data-sns-skip], #skip-sns-button")) return;
+        window.tuviSnsFallback(event);
+      }, true);
+      if (window.location.protocol === "file:") {
+        const script = document.createElement("script");
+        script.defer = true;
+        script.src = "app.js?v=paid-report-upgrade-1";
+        document.currentScript.after(script);
+      }
+    </script>
+    <script type="module" src="app.js?v=paid-report-upgrade-1"></script>
+  </body>
+</html>

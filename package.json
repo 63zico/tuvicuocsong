@@ -1,0 +1,31 @@
+{
+  "name": "tu-vi-cuoc-song",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Tu Vi Cuoc Song Zalo Mini App prototype",
+  "scripts": {
+    "local": "node server.mjs",
+    "dev": "vite --host 127.0.0.1 --port 5173",
+    "build": "vite build",
+    "zalo:login": "zmp login",
+    "zalo:start": "zmp start",
+    "zalo:start:device": "zmp start -D",
+    "zalo:deploy": "zmp deploy",
+    "zalo:deploy:testing": "zmp deploy --testing"
+  },
+  "dependencies": {
+    "zmp-sdk": "latest",
+    "zmp-ui": "latest"
+  },
+  "devDependencies": {
+    "vite": "^5.2.13",
+    "zmp-cli": "latest",
+    "zmp-vite-plugin": "latest"
+  },
+  "browserslist": [
+    "Android >= 5",
+    "IOS >= 9.3",
+    "Chrome >= 49",
+    "Safari >= 9.1"
+  ]
+}

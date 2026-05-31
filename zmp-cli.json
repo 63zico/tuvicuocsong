@@ -1,0 +1,15 @@
+{
+  "name": "tu-vi-cuoc-song",
+  "framework": "vanilla",
+  "cssPreProcessor": "css",
+  "newProject": false,
+  "template": "existing-web-app",
+  "theming": {
+    "customColor": true,
+    "color": "#ffcf62",
+    "darkTheme": false,
+    "iconFonts": true,
+    "fillBars": false,
+    "useUiKits": false
+  }
+}
