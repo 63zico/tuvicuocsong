@@ -24,6 +24,35 @@ window.TODAY_FORTUNE_ADSENSE_SLOTS = {
 
 첫 화면과 생년월일 입력 과정에는 광고를 넣지 않습니다. 결과 화면 중간/하단 광고 영역은 CLS 방지를 위해 높이가 고정되어 있습니다.
 
+## Google Analytics 설정
+
+Google Analytics 4에서 웹 스트림을 만든 뒤 `G-`로 시작하는 Measurement ID를 복사합니다. 공식 GA4 안내에 따르면 웹 데이터 스트림의 Measurement ID는 `G-` 또는 `AW-`로 시작합니다.
+
+`index.html`의 아래 meta 태그에 ID를 넣으면 GA4 추적이 켜집니다.
+
+```html
+<meta name="ga4-measurement-id" content="G-XXXXXXXXXX" />
+```
+
+추적하는 주요 이벤트:
+
+- `app_boot`: 앱 첫 로드
+- `screen_view`: 홈, 입력, 타로, 결과 등 화면 전환
+- `navigation_click`: 주요 메뉴/CTA 클릭
+- `input_flow_start`: 운세 입력 시작
+- `entry_step_complete`: 입력 단계 완료
+- `analysis_start`: 분석 화면 진입
+- `result_complete`: 결과 화면 도착
+- `detail_unlock_click`: 광고 보고 상세 풀이 클릭
+- `detail_unlocked`: 상세 풀이 열림
+- `share_card_created`: 공유 카드 생성
+- `share_card_saved`: 공유 이미지 저장
+- `reading_saved`: 운세 기록 저장
+- `attendance_done`: 방문 체크
+- `tarot_card_drawn`: 타로 카드 선택
+
+이름, 생년월일, 출생시간 같은 개인정보는 GA4로 보내지 않습니다.
+
 ## 로컬 실행
 
 ```powershell
@@ -32,7 +61,7 @@ npm run build
 npm run dev
 ```
 
-또는 정적 파일만 확인할 때는 `index.html`을 직접 열 수 있습니다.
+정적 서버로 확인하려면 `npm run local` 후 `http://127.0.0.1:5173`으로 접속합니다. `index.html`을 직접 열면 모듈 스크립트가 제한될 수 있습니다.
 
 ## 고지
 

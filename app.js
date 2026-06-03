@@ -206,6 +206,7 @@ let entryStep = 1;
 let analysisTimer = null;
 let analysisProgressTimer = null;
 let tarotOffset = 0;
+let analyticsReady = false;
 
 function clamp(value, min, max) {
   return Math.max(min, Math.min(max, value));
@@ -460,7 +461,63 @@ function buildDetailSections(template, context, name) {
   });
 }
 
+function getAnalyticsId() {
+  const metaId = document.querySelector('meta[name="ga4-measurement-id"]')?.content.trim() || "";
+  return window.TODAY_FORTUNE_GA_ID || window.TODAY_FORTUNE_CONFIG?.gaMeasurementId || metaId;
+}
+
+function sanitizeMetricPayload(payload = {}) {
+  const blockedKeys = new Set(["name", "date", "birthDate", "inputDate", "analysisDate", "time", "rawDate"]);
+  return Object.entries(payload).reduce((safePayload, [key, value]) => {
+    if (blockedKeys.has(key)) return safePayload;
+    if (value === undefined || value === null) return safePayload;
+    if (typeof value === "number" || typeof value === "boolean") {
+      safePayload[key] = value;
+      return safePayload;
+    }
+    safePayload[key] = String(value).slice(0, 100);
+    return safePayload;
+  }, {});
+}
+
+function initAnalytics() {
+  if (analyticsReady) return true;
+  const measurementId = getAnalyticsId();
+  if (!measurementId) return false;
+  window.dataLayer = window.dataLayer || [];
+  window.gtag =
+    window.gtag ||
+    function gtag() {
+      window.dataLayer.push(arguments);
+    };
+
+  if (!document.querySelector(`script[data-ga4-id="${measurementId}"]`)) {
+    const script = document.createElement("script");
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(measurementId)}`;
+    script.dataset.ga4Id = measurementId;
+    document.head.appendChild(script);
+  }
+
+  window.gtag("js", new Date());
+  window.gtag("config", measurementId, { send_page_view: false });
+  analyticsReady = true;
+  return true;
+}
+
+function sendAnalyticsEvent(name, payload = {}) {
+  if (!initAnalytics() || typeof window.gtag !== "function") return;
+  const params = {
+    app_version: VERSION,
+    service: currentService,
+    active_view: document.body.dataset.activeView || "home",
+    ...sanitizeMetricPayload(payload),
+  };
+  window.gtag("event", name, params);
+}
+
 function trackMetric(name, payload = {}) {
+  const eventPayload = { service: currentService, ...payload };
   try {
     const key = "today-fortune:metrics-v1";
     const metrics = JSON.parse(localStorage.getItem(key) || "{}");
@@ -468,12 +525,13 @@ function trackMetric(name, payload = {}) {
     const today = metrics[day] || {};
     const current = today[name] || { count: 0, items: [] };
     current.count += 1;
-    current.items = [{ at: Date.now(), service: currentService, ...payload }, ...(current.items || [])].slice(0, 20);
+    current.items = [{ at: Date.now(), ...sanitizeMetricPayload(eventPayload) }, ...(current.items || [])].slice(0, 20);
     metrics[day] = { ...today, [name]: current };
     localStorage.setItem(key, JSON.stringify(metrics));
   } catch {
     // 로컬 지표 저장 실패는 사용자 흐름을 막지 않습니다.
   }
+  sendAnalyticsEvent(name, eventPayload);
 }
 
 function showSheet(sheetId) {
@@ -503,6 +561,10 @@ function openView(viewId) {
     button.classList.toggle("active", Boolean(isActive));
   });
   window.scrollTo({ top: 0, behavior: "smooth" });
+  trackMetric("screen_view", {
+    screen_name: viewId,
+    page_path: `/${viewId}`,
+  });
 }
 
 function setService(serviceId) {
@@ -594,11 +656,17 @@ function setEntryStep(step) {
 function openInputFlow() {
   openView("input");
   setEntryStep(1);
+  trackMetric("input_flow_start", { entry_service: currentService });
   window.setTimeout(() => $("#name")?.focus(), 120);
 }
 
 function finishEntryFlow() {
   const profile = getEntryProfile();
+  trackMetric("analysis_start", {
+    calendar: profile.calendar,
+    lunar_intercalation: Boolean(profile.lunarIntercalation),
+    unknown_time: Boolean(profile.unknownTime),
+  });
   currentReading = makeReading(profile);
   localStorage.setItem("today-fortune:last-profile", JSON.stringify(profile));
   showAnalysis(profile);
@@ -899,6 +967,10 @@ function drawTarot(cardIndex = 0) {
   if (result) result.hidden = false;
   $$(".draw-card").forEach((button) => button.classList.remove("selected"));
   $$(".draw-card")[Number(cardIndex)]?.classList.add("selected");
+  trackMetric("tarot_card_drawn", {
+    card_index: Number(cardIndex),
+    card_title: card.title,
+  });
 }
 
 function seedHomeScore() {
@@ -982,6 +1054,12 @@ function bindNavigation() {
     const trigger = event.target.closest("[data-open]");
     if (!trigger) return;
     event.preventDefault();
+    trackMetric("navigation_click", {
+      target_view: trigger.dataset.open,
+      target_service: trigger.dataset.service || "",
+      nav_area: trigger.dataset.nav || "",
+      label: trigger.textContent.trim().replace(/\s+/g, " ").slice(0, 60),
+    });
     if (trigger.dataset.service) setService(trigger.dataset.service);
     if (trigger.dataset.open === "input" && !trigger.dataset.skipStart) {
       showSheet("entry-start-sheet");
@@ -1000,6 +1078,10 @@ function bindForm() {
   $("#birth-form")?.addEventListener("submit", (event) => event.preventDefault());
   $("#entry-next-button")?.addEventListener("click", () => {
     if (!validateEntryStep()) return;
+    trackMetric("entry_step_complete", {
+      entry_step: entryStep,
+      next_step: entryStep < 4 ? entryStep + 1 : "terms",
+    });
     if (entryStep < 4) {
       setEntryStep(entryStep + 1);
       return;
@@ -1075,14 +1157,17 @@ function bindForm() {
     updateEntryReview();
   });
   $("#start-entry-flow")?.addEventListener("click", () => {
+    trackMetric("start_sheet_continue", { entry_service: currentService });
     hideSheet("entry-start-sheet");
     openInputFlow();
   });
   $("#agree-start-button")?.addEventListener("click", () => {
+    trackMetric("terms_agreed", { entry_service: currentService });
     hideSheet("terms-sheet");
     finishEntryFlow();
   });
   $("[data-sns-skip]")?.addEventListener("click", () => {
+    trackMetric("sns_skipped", { entry_service: currentService });
     hideSheet("sns-sheet");
     finishEntryFlow();
   });
@@ -1138,6 +1223,7 @@ function bindActions() {
     tarotOffset = mod(tarotOffset + 1, tarotCards.length);
     $("#tarot-draw-result")?.setAttribute("hidden", "");
     $$(".draw-card").forEach((button) => button.classList.remove("selected"));
+    trackMetric("tarot_shuffle");
   });
 }
 
@@ -1145,12 +1231,14 @@ function boot() {
   if (window.__tuviBooted) return;
   window.__tuviBooted = true;
   window.tuviContinueFromSns = finishEntryFlow;
+  initAnalytics();
   applyStaticCopy();
   bindNavigation();
   bindForm();
   bindActions();
   seedHomeScore();
   setService("today");
+  trackMetric("app_boot", { initial_path: window.location.pathname || "/" });
 }
 
 boot();
