@@ -28,8 +28,9 @@ function send(response, status, body, type = "text/plain; charset=utf-8") {
 }
 
 function safePath(pathname) {
+  if (pathname === "/" || pathname === "") return join(root, "index.html");
   const cleaned = normalize(decodeURIComponent(pathname)).replace(/^(\.\.[/\\])+/, "");
-  return join(root, cleaned === "/" || cleaned === "." ? "index.html" : cleaned);
+  return join(root, cleaned === "." ? "index.html" : cleaned);
 }
 
 const server = createServer(async (request, response) => {

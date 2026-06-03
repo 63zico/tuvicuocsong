@@ -1,62 +1,39 @@
-# Tử Vi Cuộc Sống
+# 오늘운세
 
-MVP web app and Zalo Mini App prototype for Vietnamese users who want a Tứ trụ and Ngũ hành reading.
+광고 기반 무료 운세 베타 서비스입니다. 결제 없이 오늘운세, 타로, 궁합, 신년운세를 먼저 제공합니다.
 
-## What is included
+## 핵심 구조
 
-- Birth date, birth time, timezone, calendar, and name input
-- Four pillars calculation for year, month, day, and hour
-- Five-element balance chart
-- Vietnamese personality, relationship, career, and money guidance
-- Copyable summary
-- Mobile-first responsive layout
+- 첫 화면 CTA: `오늘 운세 무료 보기`
+- 홈 메뉴: 오늘운세, 타로, 궁합, 신년운세
+- 결과 화면: 핵심 3줄, 점수, 연애/재물/일/건강 요약, 광고 슬롯, 상세 풀이 잠금, 공유 카드, 내일 재방문 유도
+- 상세 풀이: `광고 보고 상세 풀이 열기`로 해금
+- 저장 기록: 회원가입 없이 이 기기에 최근 운세를 저장하고 다음 방문 때 비교
 
-## Run locally
+## 광고 설정
 
-Open `index.html` directly in a browser, or serve the folder locally:
+실제 AdSense ID가 없을 때는 고정 높이 placeholder가 표시됩니다. 나중에 아래 전역 값만 넣으면 같은 슬롯에 광고가 들어갑니다.
 
-```powershell
-cd "C:\Users\jinu\Documents\New project 2"
-node server.mjs
+```js
+window.TODAY_FORTUNE_ADSENSE_CLIENT = "ca-pub-xxxxxxxxxxxxxxxx";
+window.TODAY_FORTUNE_ADSENSE_SLOTS = {
+  "result-middle": "1234567890",
+  "result-bottom": "9876543210"
+};
 ```
 
-Then open `http://localhost:5173`.
+첫 화면과 생년월일 입력 과정에는 광고를 넣지 않습니다. 결과 화면 중간/하단 광고 영역은 CLS 방지를 위해 높이가 고정되어 있습니다.
 
-You can also double-click `start-server.cmd` or run:
-
-```powershell
-& "C:\Users\jinu\Documents\New project 2\start-server.cmd"
-```
-
-If your terminal is still in another folder, you can also run:
+## 로컬 실행
 
 ```powershell
-node "C:\Users\jinu\Documents\New project 2\server.mjs"
-```
-
-## Zalo Mini App preparation
-
-This folder now includes Zalo Mini App metadata and scripts:
-
-- `package.json`
-- `vite.config.mjs`
-- `app-config.json`
-- `zmp-cli.json`
-- `ZALO_MINI_APP_SETUP.md`
-
-After creating a Mini App in the Zalo developer console, install dependencies and run the Zalo CLI:
-
-```powershell
-cd "C:\Users\jinu\Documents\New project 2"
 npm install
-npm run zalo:login
-npm run zalo:start:device
+npm run build
+npm run dev
 ```
 
-See `ZALO_MINI_APP_SETUP.md` for the full registration and deploy flow.
+또는 정적 파일만 확인할 때는 `index.html`을 직접 열 수 있습니다.
 
-## MVP notes
+## 고지
 
-- The current calendar field expects a Gregorian date. If a user has a lunar birthday, convert it to Gregorian first before entering it.
-- The reading is designed as entertainment and self-reflection, not medical, legal, or financial advice.
-- The pillar logic is intentionally lightweight for MVP validation. A production app should replace it with a verified lunar calendar and solar-term engine.
+이 서비스의 운세 콘텐츠는 참고용 엔터테인먼트 콘텐츠입니다. 의료, 법률, 금융, 투자 등 중요한 결정은 실제 상황과 전문가 조언을 함께 확인해야 합니다.

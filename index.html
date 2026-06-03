@@ -1,10 +1,10 @@
-<!doctype html>
-<html lang="vi">
+﻿<!doctype html>
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>tuvi.life - La so moi ngay</title>
-    <link rel="stylesheet" href="styles.css?v=paid-report-upgrade-1" />
+    <title>오늘운세 - 무료 사주 타로</title>
+    <link rel="stylesheet" href="styles.css?v=korean-free-beta-5" />
   </head>
   <body>
     <main class="app-shell">
@@ -12,22 +12,22 @@
         <header class="app-header">
           <a class="brand" data-open="home" href="#">
             <span></span>
-            <strong>tuvi.life</strong>
+            <strong>오늘운세</strong>
           </a>
-          <button class="text-button" data-open="guide" type="button">상담</button>
+          <button class="text-button" data-open="home" type="button" hidden>무료</button>
         </header>
 
         <section class="hero-section">
           <div class="hero-copy">
-            <span class="eyebrow">Lá số cá nhân miễn phí</span>
-            <h1>Đọc nhịp vận hôm nay bằng ngày sinh của bạn</h1>
-            <p>Một trải nghiệm tử vi hiện đại: rõ ràng, nhẹ nhàng và có thể quay lại mỗi ngày.</p>
-            <button class="primary-button" data-open="input" data-service="today" type="button">Bắt đầu xem miễn phí</button>
+            <span class="eyebrow">매일 무료 운세</span>
+            <h1>오늘의 운세를 무료로 확인하세요</h1>
+            <p>생년월일을 입력하면 오늘의 총운, 연애운, 재물운, 일운, 건강운을 간단하게 볼 수 있어요.</p>
+            <button class="primary-button" data-open="input" data-service="today" type="button">오늘 운세 무료 보기</button>
           </div>
 
           <div class="hero-card" aria-hidden="true">
             <div class="hero-card-top">
-              <span>Hôm nay</span>
+              <span>오늘</span>
               <b id="home-score">76</b>
             </div>
             <div class="hero-ring" style="--score: 76"><strong>76</strong></div>
@@ -39,13 +39,13 @@
           </div>
         </section>
 
-        <section class="promo-carousel" aria-label="Goi y noi bat">
+        <section class="promo-carousel" aria-label="추천 콘텐츠" hidden>
           <div class="promo-track" id="promo-track">
             <article class="promo-slide promo-orange">
               <div class="promo-copy">
-                <span class="promo-pill">Diem danh</span>
-                <h2>Mo van may khi quay lai moi ngay</h2>
-                <p>Mots tin hieu nho, mot loi nhac dung luc va mot ngay de ban giu nhip tot hon.</p>
+                <span class="promo-pill">출석</span>
+                <h2>매일 돌아올수록 운의 흐름이 보여요</h2>
+                <p>작은 힌트와 오늘의 조언을 기록해 내 흐름을 확인하세요.</p>
               </div>
               <div class="promo-visual bonus-visual" aria-hidden="true">
                 <i class="bonus-body"></i>
@@ -56,9 +56,9 @@
 
             <article class="promo-slide promo-blue">
               <div class="promo-copy">
-                <span class="promo-pill">Cung hop</span>
-                <h2>Ai hop nhip voi ban mua nay?</h2>
-                <p>Xem cach hai nguoi de gan nhau hon, de tranh hieu lam va giu cam xuc em hon.</p>
+                <span class="promo-pill">궁합</span>
+                <h2>지금 나와 맞는 관계의 리듬은?</h2>
+                <p>두 사람이 가까워지는 방식과 오해를 줄이는 포인트를 확인하세요.</p>
               </div>
               <div class="promo-visual compat-visual" aria-hidden="true">
                 <i class="compat-ground"></i>
@@ -70,9 +70,9 @@
 
             <article class="promo-slide promo-green">
               <div class="promo-copy">
-                <span class="promo-pill">Ngay chon</span>
-                <h2>Dung bo lo ngay quan trong</h2>
-                <p>Truoc khi gap go, ky ket hay bat dau viec moi, xem truoc van khi de chon dung luc.</p>
+                <span class="promo-pill">날짜 선택</span>
+                <h2>중요한 날의 흐름을 놓치지 마세요</h2>
+                <p>만남, 계약, 시작 전에 오늘의 운 흐름을 가볍게 확인하세요.</p>
               </div>
               <div class="promo-visual calendar-visual" aria-hidden="true">
                 <i class="calendar-card"></i>
@@ -83,9 +83,9 @@
 
             <article class="promo-slide promo-cream">
               <div class="promo-copy">
-                <span class="promo-pill">Con giap</span>
-                <h2>Hom nay co hoi nao dang go cua?</h2>
-                <p>Mot cach nhe nhang de xem ngay nao nen tien len, ngay nao nen cham lai.</p>
+                <span class="promo-pill">띠 운세</span>
+                <h2>오늘 어떤 기회가 다가올까요?</h2>
+                <p>밀고 나갈 날과 한 박자 늦출 날을 가볍게 구분해 보세요.</p>
               </div>
               <div class="promo-visual zodiac-visual" aria-hidden="true">
                 <i></i><i></i><i></i><i></i><i></i><i></i>
@@ -103,14 +103,14 @@
         <section class="daily-portal" aria-label="매일 보는 운세 포털">
           <div class="portal-head">
             <span>오늘의 무료 운세</span>
-            <h2>매일 확인하고 복주머니 받기</h2>
-            <p>오늘의 운세부터 타로, 재물운, 궁합까지 한 번에 확인해요.</p>
+            <h2>매일 확인하고 오늘의 흐름 저장하기</h2>
+          <p>오늘운세, 타로, 궁합, 신년운세를 무료로 확인하세요.</p>
           </div>
           <div class="portal-main-card">
             <div>
-              <span>오늘 내 운세 점수</span>
-              <strong><b id="portal-score">90</b>점</strong>
-              <p>총운, 재물운, 연애운, 건강운을 한눈에 확인해요.</p>
+              <span>오늘의 흐름 미리보기</span>
+              <strong id="portal-preview-label">오늘 운세 무료</strong>
+              <p>개인 점수는 생년월일 입력 후 결과 화면에서 계산됩니다.</p>
             </div>
             <button data-open="input" data-service="today" type="button">오늘 운세 보기</button>
           </div>
@@ -132,8 +132,8 @@
             </button>
             <button data-open="guide" type="button">
               <i class="portal-icon portal-chat"></i>
-              <strong>1:1 상담</strong>
-              <span>첫 상담 혜택</span>
+              <strong>준비중</strong>
+              <span>곧 공개</span>
             </button>
             <button data-open="input" data-service="tomorrow" type="button">
               <i class="portal-icon portal-moon"></i>
@@ -157,7 +157,7 @@
             </button>
           </div>
           <div class="portal-reward-row">
-            <strong>오늘 운세 보면 복주머니 +1</strong>
+            <strong>오늘 운세를 저장하면 내일 비교 가능</strong>
             <button data-open="input" data-service="today" type="button">받으러 가기</button>
           </div>
         </section>
@@ -324,7 +324,7 @@
             </button>
 
             <button class="luck-method-item" data-open="input" data-service="year" type="button">
-              <span class="luck-method-icon pouch-icon" aria-hidden="true"><i></i></span>
+              <span class="luck-method-icon record-icon" aria-hidden="true"><i></i></span>
               <span class="luck-method-copy">
                 <strong>전생복덕운</strong>
                 <small>타고난 복을 활용해 보세요</small>
@@ -385,7 +385,7 @@
             </button>
 
             <button class="solution-tile" data-open="guide" type="button">
-              <strong>점신1:1상담</strong>
+              <strong>운세 1:1 상담</strong>
               <span>혼자 해결하기 어려운 문제가<br />있다면</span>
               <i class="solution-chat" aria-hidden="true"></i>
             </button>
@@ -519,30 +519,30 @@
 
         <section class="service-card">
           <div class="section-heading">
-            <span>Dịch vụ miễn phí</span>
-            <h2>Chọn phần bạn muốn xem</h2>
+            <span>준비중 메뉴</span>
+            <h2>현재는 핵심 메뉴만 제공합니다</h2>
           </div>
           <div class="service-grid" id="service-grid"></div>
         </section>
 
         <section class="today-card">
           <div>
-            <span>Gợi ý hôm nay</span>
-            <h2>Giữ nhịp chậm, chọn một việc quan trọng</h2>
-            <p>Ngày phù hợp để sắp xếp lại kế hoạch, nói rõ điều mình cần và tránh quyết định vì cảm xúc nhất thời.</p>
+            <span>오늘의 힌트</span>
+            <h2>속도를 낮추고 중요한 일 하나를 고르세요</h2>
+            <p>계획을 다시 정리하고, 필요한 말을 분명하게 전하기 좋은 날입니다.</p>
           </div>
-          <button data-open="input" data-service="today" type="button">Xem</button>
+          <button data-open="input" data-service="today" type="button">보기</button>
         </section>
 
         <section class="insight-card">
           <div class="section-heading">
-            <span>Cách hoạt động</span>
-            <h2>Không thu phí, ưu tiên trải nghiệm quay lại hằng ngày</h2>
+            <span>이용 방식</span>
+            <h2>무료로 보고, 매일 다시 확인하는 흐름</h2>
           </div>
           <div class="step-list">
-            <article><b>01</b><strong>Nhập thông tin sinh</strong><span>Tên, ngày sinh, giờ sinh và giới tính.</span></article>
-            <article><b>02</b><strong>Đọc lá số cơ bản</strong><span>Tứ trụ, ngũ hành, điểm vận khí và lời khuyên.</span></article>
-            <article><b>03</b><strong>Quay lại mỗi ngày</strong><span>Sau này có thể hỗ trợ bằng quảng cáo nhẹ, nội dung vẫn mở tự do.</span></article>
+            <article><b>01</b><strong>출생 정보 입력</strong><span>이름, 생년월일, 출생시간, 성별을 입력합니다.</span></article>
+            <article><b>02</b><strong>기본 운세 확인</strong><span>총운, 오행 흐름, 점수와 조언을 확인합니다.</span></article>
+            <article><b>03</b><strong>매일 다시 보기</strong><span>결과를 저장하면 내 흐름을 비교할 수 있습니다.</span></article>
           </div>
         </section>
       </section>
@@ -555,35 +555,43 @@
         </header>
 
         <section class="year-fortune-report year-info-report" aria-label="신년운세 설명">
-          <div class="year-title-banner">Title Banner</div>
+          <div class="year-title-banner">2026 신년운세 리포트</div>
 
           <article class="year-reading-section">
             <h2>총운풀이</h2>
-            <p>올해는 감정 조절과 꾸준함이 가장 중요한 해입니다. 기분이 좋을 때는 크게 움직이고 싶어지지만, 갑작스러운 변화보다 정해둔 루틴을 지키는 쪽에서 더 좋은 결과가 생깁니다.</p>
-            <p>특히 올해는 자기 계발과 실력 향상에 힘을 쓸수록 운이 열립니다. 공부, 자격, 기술, 업무 역량처럼 시간이 쌓여 결과가 나는 일에 집중하면 연말로 갈수록 확실한 변화가 보입니다.</p>
-            <p>관계에서는 속마음을 혼자 오래 품기보다 적절히 표현하는 것이 좋습니다. 감정을 건강하게 나누면 가까운 사람과의 심리적 거리가 줄고, 새로운 인연도 자연스럽게 들어옵니다.</p>
-            <p>다만 연초에 세운 꿈을 끝까지 유지하기는 쉽지 않을 수 있습니다. 큰 목표를 한 번에 이루려 하기보다, 월별로 작은 성과를 쌓아가는 방식이 올해의 흐름에 더 잘 맞습니다.</p>
-            <p>올해는 초반보다 중반 이후에 운의 색이 더 분명해집니다. 처음에는 내가 제대로 가고 있는지 확신이 부족할 수 있지만, 포기하지 않고 같은 방향을 유지하면 주변에서 먼저 변화를 알아보게 됩니다.</p>
+            <p>올해는 갑자기 운이 크게 뒤집히는 해라기보다, 내가 반복해 온 선택이 결과로 드러나는 해입니다. 초반에는 속도가 느리게 느껴질 수 있지만, 기준을 세우고 같은 방향을 유지할수록 중반 이후부터 흐름이 분명해집니다.</p>
+            <p>가장 중요한 키워드는 감정 조절과 꾸준함입니다. 기분이 좋을 때는 크게 움직이고 싶어지고, 기분이 흔들릴 때는 모든 것을 멈추고 싶어질 수 있습니다. 그러나 올해의 운은 극단적인 선택보다 매일 지키는 작은 루틴에서 강하게 살아납니다.</p>
+            <p>일과 공부에서는 실력을 증명할 수 있는 결과물을 남기는 것이 좋습니다. 자격, 포트폴리오, 문서, 발표, 기록처럼 눈에 보이는 형태가 있을수록 주변의 인정이 빨라집니다.</p>
+            <p>돈의 흐름은 큰 수익보다 새는 돈을 막는 쪽에서 먼저 좋아집니다. 고정비, 자동결제, 충동구매를 정리하면 생각보다 빠르게 여유가 생기고, 그 여유가 다음 선택을 안정적으로 만듭니다.</p>
+            <p>관계에서는 속마음을 혼자 오래 품기보다 적절히 표현하는 것이 좋습니다. 다만 감정이 올라온 순간 바로 말하면 말의 강도가 세질 수 있으니, 올해는 표현하되 한 박자 늦추는 태도가 유리합니다.</p>
+            <p>연초에는 정리와 준비, 중반에는 기회와 만남, 연말에는 결과 확인의 흐름이 강합니다. 지금 당장 모든 답을 내리기보다 월별로 작은 목표를 세우고, 그 목표가 실제 생활에서 유지되는지를 확인해 보세요.</p>
           </article>
 
           <article class="year-reading-section">
             <h2>가장 좋은 것</h2>
-            <p>올해는 학업운과 성장운이 좋은 시기입니다. 배우고 익히는 일, 시험 준비, 자격 취득, 새로운 업무 기술 습득에 힘을 쏟으면 기대보다 좋은 결과를 얻을 가능성이 큽니다.</p>
-            <p>내 능력이 사람들에게 인정받고, 맡은 역할이 넓어지는 일이 생길 수 있습니다. 목표를 구체적으로 세우고 꾸준히 밀고 나가면 내가 생각한 것보다 빠르게 위치가 올라갑니다.</p>
-            <p>특히 문서, 공부, 발표, 정리, 기획처럼 머리를 쓰는 일에서 운이 살아납니다. 평소 어렵게 느꼈던 분야도 올해는 반복해서 다루면 내 것으로 만들 수 있습니다.</p>
+            <p>올해 가장 좋은 운은 성장운과 인정운입니다. 배우고 익히는 일, 시험 준비, 자격 취득, 새로운 업무 기술 습득처럼 시간이 쌓여 결과가 나는 분야에서 운이 살아납니다.</p>
+            <p>내 능력이 사람들에게 인정받고, 맡은 역할이 넓어지는 일이 생길 수 있습니다. 다만 이 인정은 우연히 찾아오기보다 내가 남긴 결과물과 태도를 통해 들어옵니다.</p>
+            <p>특히 문서, 공부, 발표, 정리, 기획처럼 머리를 쓰는 일에서 유리합니다. 평소 어렵게 느꼈던 분야도 올해는 반복해서 다루면 내 것으로 만들 수 있습니다.</p>
+            <p>관계에서도 좋은 흐름이 있습니다. 나를 불안하게 만드는 관계보다, 함께 있을 때 생활이 안정되는 사람과의 인연이 길합니다. 새 인연보다 기존 관계를 건강하게 재정리하는 과정에서 좋은 기회가 생길 수 있습니다.</p>
+            <p>직장이나 사업에서는 작은 성과를 꾸준히 보여주는 방식이 유리합니다. 한 번에 큰 성과를 만들려 하기보다, 매달 확인 가능한 결과를 남기는 사람이 올해의 운을 더 잘 가져갑니다.</p>
           </article>
 
           <article class="year-reading-section">
             <h2>주의가 필요한 것</h2>
-            <p>올해는 마음의 흔들림이 커질 수 있으므로 감정 조절이 중요합니다. 갑작스러운 우울감이나 공허함이 찾아올 수 있으니, 혼자 참기보다 생활 리듬과 휴식 시간을 먼저 챙기세요.</p>
-            <p>사람 관계에서는 괜한 오해나 거리감이 생기지 않도록 말의 온도를 조절해야 합니다. 감정적으로 몰입하기보다 현실적으로 지금 해야 할 일에 집중하는 것이 좋습니다.</p>
-            <p>아직 일어나지 않은 일을 미리 걱정해 판단을 흐리지 않는 것이 중요합니다. 감정과 사실을 분리해서 보면 올해의 불안은 훨씬 다루기 쉬워집니다.</p>
+            <p>올해 가장 조심해야 할 것은 감정의 기복입니다. 일이 잘 풀릴 때는 무리하게 약속을 늘리고, 마음이 가라앉을 때는 필요한 연락과 일을 미루기 쉬운 흐름입니다.</p>
+            <p>갑작스러운 우울감이나 공허함이 찾아올 수 있으니, 혼자 참기보다 생활 리듬과 휴식 시간을 먼저 챙기세요. 수면, 식사, 이동 시간이 흐트러지면 판단도 함께 흔들릴 수 있습니다.</p>
+            <p>사람 관계에서는 괜한 오해나 거리감이 생기지 않도록 말의 온도를 조절해야 합니다. 상대의 짧은 답장이나 늦은 반응을 마음의 크기로 바로 해석하면 불필요한 감정 소모가 커집니다.</p>
+            <p>돈에서는 “이번 한 번쯤은 괜찮다”는 생각을 조심해야 합니다. 작은 지출이 반복되면 하반기에 선택지가 줄어들 수 있으므로, 올해는 쓰는 돈보다 남기는 돈을 먼저 보세요.</p>
+            <p>아직 일어나지 않은 일을 미리 걱정해 판단을 흐리지 않는 것도 중요합니다. 감정과 사실을 분리해서 보면 올해의 불안은 훨씬 다루기 쉬워집니다.</p>
           </article>
 
           <article class="year-reading-section">
             <h2>올해의 조언</h2>
             <p>올해는 생각이 많아지는 시기입니다. 상상과 걱정이 커지면 현실적인 판단이 늦어질 수 있으니, 계획을 작게 나누고 바로 실행할 수 있는 일부터 처리하세요.</p>
-            <p>꿈은 크게 가져도 좋지만 현실적인 순서가 없으면 오히려 나를 지치게 만들 수 있습니다. 매달 하나씩 분명한 결과를 남기는 것이 가장 좋은 개운법입니다.</p>
+            <p>꿈은 크게 가져도 좋지만 현실적인 순서가 없으면 오히려 나를 지치게 만들 수 있습니다. 목표를 크게 적은 뒤, 이번 달에 실제로 끝낼 수 있는 행동 하나로 줄이는 것이 좋습니다.</p>
+            <p>중요한 결정은 기록으로 남기세요. 말로만 정한 계획은 기분에 따라 쉽게 바뀌지만, 글로 남긴 계획은 내가 어디까지 왔는지 확인하게 해줍니다.</p>
+            <p>올해의 개운법은 거창하지 않습니다. 매달 하나의 결과물, 매주 하나의 정리, 매일 하나의 작은 실행을 남기는 것입니다. 운이 흔들릴 때도 이 세 가지가 기준이 되어줍니다.</p>
+            <p>내 신년운세를 자세히 보면 생년월일과 출생시간 기준으로 올해의 강점, 주의할 흐름, 월별 실행 포인트를 더 구체적으로 확인할 수 있습니다.</p>
           </article>
 
           <button class="year-start-button" data-open="input" data-service="year" type="button">내 신년운세 자세히 보기</button>
@@ -594,9 +602,9 @@
         <header class="app-header">
           <a class="brand" data-open="home" data-nav="year" href="#">
             <span></span>
-            <strong>tuvi.life</strong>
+            <strong>오늘운세</strong>
           </a>
-          <button class="text-button" data-open="guide" type="button">상담</button>
+          <button class="text-button" data-open="home" type="button" hidden>무료</button>
         </header>
 
         <section class="tarot-home" aria-label="Tarot readings">
@@ -627,7 +635,7 @@
               </div>
               <div class="tarot-result-actions">
                 <button class="unlock-three-card" type="button">광고 보고 3장 배열 열기</button>
-                <button class="ask-tarot-consult" data-open="guide" type="button">상담으로 더 묻기</button>
+                <button class="ask-tarot-consult" type="button" hidden>준비중</button>
               </div>
             </section>
           </section>
@@ -1026,12 +1034,12 @@
               <em>대운의 시기는 성별에 따라 달라요!</em>
             </div>
             <div class="gender-choice" role="radiogroup" aria-label="성별">
-              <button class="active" data-gender-value="Nam" type="button">남자</button>
-              <button data-gender-value="Nữ" type="button">여자</button>
+              <button class="active" data-gender-value="male" aria-pressed="true" type="button">남자</button>
+              <button data-gender-value="female" aria-pressed="false" type="button">여자</button>
             </div>
             <select id="gender" aria-label="성별">
-              <option value="Nam" selected>Nam</option>
-              <option value="Nữ">Nữ</option>
+              <option value="male" selected>남성</option>
+              <option value="female">여성</option>
             </select>
           </div>
 
@@ -1051,11 +1059,17 @@
               <em>생년월일 8자리</em>
             </label>
 
-            <div class="calendar-toggle" aria-label="양력 음력 선택">
-              <small>사주분석은 만 나이로 적용돼요</small>
-              <button class="active" type="button">양력</button>
-              <button type="button" disabled>음력</button>
+            <div class="calendar-toggle" role="radiogroup" aria-label="양력 음력 선택">
+              <small id="calendar-helper">입력한 생년월일 기준을 선택해 주세요</small>
+              <button class="active" data-calendar-value="solar" aria-pressed="true" type="button">양력</button>
+              <button data-calendar-value="lunar" aria-pressed="false" type="button">음력</button>
             </div>
+            <label class="lunar-extra" id="lunar-extra" hidden>
+              <input id="lunar-leap-month" type="checkbox" />
+              <span>윤달입니다</span>
+              <em>음력 생일이 윤달인 경우에만 선택하세요.</em>
+            </label>
+            <input id="calendar-type" type="hidden" value="solar" />
           </div>
 
           <div class="entry-step" data-entry-step="4">
@@ -1074,6 +1088,14 @@
                 <dd id="review-date">-</dd>
               </dl>
               <dl>
+                <dt>달력 기준</dt>
+                <dd id="review-calendar">양력</dd>
+              </dl>
+              <dl>
+                <dt>분석 기준일</dt>
+                <dd id="review-solar-date">-</dd>
+              </dl>
+              <dl>
                 <dt>태어난 시간</dt>
                 <dd id="review-time">-</dd>
               </dl>
@@ -1089,8 +1111,7 @@
           <button class="sheet-close" data-close-sheet="entry-start-sheet" type="button" aria-label="닫기">×</button>
           <h2>당신의 앞날이 궁금하다면?</h2>
           <p>지금 사주정보를 입력하고<br />나만의 흐름을 알아봐요!</p>
-          <button class="sheet-primary" id="start-entry-flow" type="button">점신 시작하기</button>
-          <button class="sheet-secondary" type="button">기존 회원 로그인하기</button>
+          <button class="sheet-primary" id="start-entry-flow" type="button">무료로 시작하기</button>
         </section>
       </div>
 
@@ -1127,28 +1148,28 @@
           <article>
             <div class="ad-product-image ad-product-blue"></div>
             <div>
-              <strong>Tủ mát Sanaky<br />VH-168KL 160 lít</strong>
-              <b>7.090.000đ <s>9.440.000đ</s></b>
+              <strong>오늘의 추천 콘텐츠<br />상단 광고 영역</strong>
+              <b>광고 표시 영역</b>
             </div>
             <button type="button" aria-label="상품 보기">›</button>
           </article>
           <article>
             <div class="ad-product-image ad-product-dark"></div>
             <div>
-              <strong>Tủ mát Darling 360 lít<br />DL-3600A/3600AL Kính LOW-E</strong>
-              <b>7.790.000đ</b>
+              <strong>모바일 네이티브 광고<br />본문 중간 슬롯</strong>
+              <b>광고 표시 영역</b>
             </div>
             <button type="button" aria-label="상품 보기">›</button>
           </article>
           <article>
             <div class="ad-product-image ad-product-light"></div>
             <div>
-              <strong>Tủ mát inverter Darling<br />DL-5000A3L/DL-5000A3 500 lít</strong>
-              <b>10.890.000đ</b>
+              <strong>운세 결과 하단 광고<br />추천 슬롯</strong>
+              <b>광고 표시 영역</b>
             </div>
             <button type="button" aria-label="상품 보기">›</button>
           </article>
-          <span class="analysis-ad-brand">META.vn</span>
+          <span class="analysis-ad-brand">AD</span>
         </div>
 
         <div class="analysis-message">오늘 <strong id="analysis-count">791,444</strong>명이 운세를 확인했어요!</div>
@@ -1169,7 +1190,7 @@
         </header>
 
         <section class="year-fortune-report" aria-label="신년운세 상세 풀이">
-          <div class="year-title-banner">Title Banner</div>
+          <div class="year-title-banner">2026 신년운세 리포트</div>
 
           <article class="year-reading-section">
             <h2>총운풀이</h2>
@@ -1252,7 +1273,7 @@
 
           <section class="analysis-report-card" aria-label="오늘의 운세 분석글">
             <div class="report-premium-top">
-              <span>PREMIUM SAJU REPORT</span>
+              <span>무료 상세 리포트</span>
               <strong id="report-score-pill">오늘 운세 90점</strong>
             </div>
             <h2><b id="report-name">토댕이</b>님의 오늘 운세 정밀 분석</h2>
@@ -1350,13 +1371,13 @@
             <div class="star-divider"></div>
             <div class="star-product">
               <p>지금 내 상황에 꼭 필요한</p>
-              <h2><span>점신 부적</span>은?</h2>
+              <h2><span>행운 부적</span>은?</h2>
               <div class="star-product-row">
                 <div class="talisman-card" aria-hidden="true"><i></i></div>
                 <div class="star-product-copy">
                   <strong>만사형통부</strong>
                   <span>모든 일이 뜻하는 대로<br />이루어지길 기원하는 부적</span>
-                  <button type="button">구매하기</button>
+                  <button type="button" hidden>준비중</button>
                 </div>
               </div>
             </div>
@@ -1397,10 +1418,133 @@
             </div>
 
             <div class="reward-consult-row">
-              <button class="reward-button" type="button">복주머니 받기</button>
-              <button class="consult-button" data-open="guide" type="button">상담으로 확인하기</button>
+              <button class="reward-button" type="button">기록 저장하기</button>
+              <button class="consult-button" type="button" hidden>준비중</button>
             </div>
           </section>
+        </section>
+
+        <section class="free-result-summary" aria-label="무료 운세 결과">
+          <article class="free-key-card">
+            <span id="free-result-kicker">오늘 운세 핵심</span>
+            <h2 id="free-result-heading">오늘의 흐름을 확인했어요</h2>
+            <ul id="free-three-lines">
+              <li>중요한 일은 우선순위를 정하고 시작하세요.</li>
+              <li>돈이 나가는 결정은 한 번 더 확인하세요.</li>
+              <li>관계에서는 짧고 분명한 표현이 유리합니다.</li>
+            </ul>
+          </article>
+
+          <article class="personal-signal-card" aria-label="개인화 분석 기준">
+            <div>
+              <span>분석 기준</span>
+              <strong>입력한 정보로 오늘의 흐름을 다시 맞췄어요</strong>
+            </div>
+            <ul>
+              <li><b id="personal-zodiac">띠</b><span>생년 흐름</span></li>
+              <li><b id="personal-time">시간</b><span>출생 시간대</span></li>
+              <li><b id="personal-element">기운</b><span>오늘 기질</span></li>
+              <li><b id="personal-focus">핵심</b><span>주의 포인트</span></li>
+            </ul>
+          </article>
+
+          <article class="free-score-card">
+            <div>
+              <span>오늘의 점수</span>
+              <strong><b id="free-score-number">90</b>점</strong>
+            </div>
+            <p id="free-score-copy">오늘은 작게 시작하고 확실하게 마무리할수록 운이 안정됩니다.</p>
+          </article>
+
+          <div class="free-summary-grid" aria-label="운세 요약">
+            <article>
+              <span>연애</span>
+              <strong id="free-love-title">대화운 상승</strong>
+              <p id="free-love-copy">솔직하지만 부드럽게 말하면 관계가 편해집니다.</p>
+            </article>
+            <article>
+              <span>재물</span>
+              <strong id="free-money-title">지출 점검</strong>
+              <p id="free-money-copy">충동 결정보다 비교와 확인이 돈을 지킵니다.</p>
+            </article>
+            <article>
+              <span>일</span>
+              <strong id="free-work-title">마무리 우선</strong>
+              <p id="free-work-copy">새 일보다 밀린 일을 끝내면 평가가 좋아집니다.</p>
+            </article>
+            <article>
+              <span>건강</span>
+              <strong id="free-health-title">리듬 회복</strong>
+              <p id="free-health-copy">수면과 식사 시간을 일정하게 잡는 것이 좋습니다.</p>
+            </article>
+          </div>
+
+          <article class="today-action-card" aria-label="오늘의 실천 조언">
+            <span>오늘 바로 할 일</span>
+            <strong id="action-primary">가장 중요한 일 하나를 먼저 끝내기</strong>
+            <div>
+              <p><b>조심할 것</b><em id="action-caution">즉흥 결정</em></p>
+              <p><b>내일 다시 볼 것</b><em id="action-revisit">오늘의 흐름을 내일 다시 비교하세요.</em></p>
+            </div>
+          </article>
+
+          <div class="free-ad-slot" data-ad-slot="result-middle" aria-label="결과 중간 광고"></div>
+
+          <article class="free-detail-lock" id="free-detail-lock">
+            <div class="lock-head">
+              <span>상세 풀이 잠금</span>
+              <strong>광고를 보고 상세 풀이를 열 수 있어요</strong>
+            </div>
+            <div class="locked-detail-preview" id="locked-detail-preview">
+              <p>총운, 연애운, 재물운, 일운, 건강운의 자세한 해석이 준비되어 있습니다.</p>
+            </div>
+            <ul class="unlock-benefit-list" aria-label="상세 풀이에 포함된 내용">
+              <li>오늘 흔들리기 쉬운 선택</li>
+              <li>연애·재물·일·건강별 구체 조언</li>
+              <li>내일 다시 볼 포인트</li>
+            </ul>
+            <div class="free-detail-body" id="free-detail-body" hidden>
+              <h3>상세 풀이</h3>
+              <p id="free-detail-total"></p>
+              <p id="free-detail-love"></p>
+              <p id="free-detail-money"></p>
+              <p id="free-detail-work"></p>
+              <p id="free-detail-health"></p>
+            </div>
+            <button class="ad-unlock-button" id="ad-unlock-button" type="button">광고 보고 상세 풀이 열기</button>
+            <small id="ad-unlock-note">광고가 로딩되지 않으면 잠시 후 무료로 열립니다.</small>
+          </article>
+
+          <article class="share-card-panel">
+            <div class="share-card-preview" id="share-card-preview">
+              <span id="share-card-service">오늘 운세</span>
+              <strong><b id="share-card-score">90</b>점</strong>
+              <em id="share-card-keyword">정리운</em>
+              <p id="share-card-advice">오늘은 우선순위를 정하면 흐름이 좋아집니다.</p>
+              <small>오늘운세</small>
+            </div>
+            <div class="share-actions">
+              <button id="make-share-card" type="button">공유 카드 생성</button>
+              <button id="save-share-card" type="button">이미지 저장</button>
+            </div>
+            <canvas id="share-card-canvas" width="900" height="1200" hidden></canvas>
+          </article>
+
+          <div class="free-ad-slot bottom-ad" data-ad-slot="result-bottom" aria-label="결과 하단 광고"></div>
+
+          <article class="revisit-card">
+            <span id="save-status-badge">회원가입 없이 저장</span>
+            <strong>오늘 운세를 저장하고 내일 비교해보세요</strong>
+            <p id="history-copy">회원가입 없이 이 기기에만 저장됩니다. 원하지 않으면 저장하지 않아도 됩니다.</p>
+            <div class="revisit-actions">
+              <button id="save-reading-record" type="button">내 운세 기록 저장하기</button>
+              <button data-open="home" type="button">내일 다시 보기</button>
+            </div>
+          </article>
+
+          <p class="entertainment-notice">
+            이 콘텐츠는 참고용 엔터테인먼트 운세입니다. 중요한 의사결정은 실제 상황과 전문가 조언을 함께 확인하세요.
+          </p>
         </section>
 
         <section class="service-analysis-card" aria-label="서비스별 사주 분석 리포트">
@@ -1440,10 +1584,10 @@
           </div>
         </section>
 
-        <section class="paid-report-card" aria-label="프리미엄 상세 운세 리포트">
+        <section class="paid-report-card" aria-label="광고 보상 상세 운세 리포트">
           <div class="paid-report-hero">
             <div>
-              <span id="paid-report-kicker">PREMIUM SAJU REPORT</span>
+              <span id="paid-report-kicker">AD REWARD REPORT</span>
               <h2 id="paid-report-title">상세 운세 분석</h2>
               <p id="paid-report-lead">지금 선택한 항목의 흐름을 더 깊게 분석하고 있습니다.</p>
             </div>
@@ -1591,27 +1735,27 @@
 
         <section class="manse-consult-card">
           <span>혼자 해석하기 어려운 만세력?</span>
-          <strong>점신 상담으로 해결!</strong>
-          <button type="button">나를 위한 맞춤 사주풀이<br />지금 바로, [운세 상담]</button>
+          <strong>준비중인 기능입니다</strong>
+          <button type="button" hidden>준비중</button>
         </section>
       </section>
 
       <section id="guide" class="view consult-page">
         <header class="consult-header">
-          <h1>상담</h1>
+          <h1>준비중</h1>
           <button class="coupon-button" type="button" aria-label="쿠폰">
             <span></span>
           </button>
         </header>
 
-        <section class="consult-carousel" aria-label="추천 상담">
+        <section class="consult-carousel" aria-label="준비중">
           <div class="consult-banner-track">
             <article class="consult-banner theme-green">
               <button class="consult-all" type="button">전체보기 +</button>
               <div class="consult-banner-copy">
                 <span>관계 회복 리딩</span>
                 <h2>우리 부부의<br />화해 기술</h2>
-                <button data-open="input" data-service="loveTarot" type="button">타로 상담으로 확인</button>
+                <button data-open="input" data-service="loveTarot" type="button">타로 보기</button>
               </div>
               <div class="consult-visual" aria-hidden="true">
                 <i class="consult-card c1"></i>
@@ -1627,7 +1771,7 @@
                 <span>운세</span>
                 <h2>인생이 잘 풀릴 수 있게</h2>
                 <p>어려움을 해결하는 힌트를 얻어가세요</p>
-                <button data-open="input" data-service="year" type="button">운세 상담 보기</button>
+                <button data-open="input" data-service="year" type="button">운세 보기</button>
               </div>
               <div class="consult-visual" aria-hidden="true">
                 <i class="consult-person solo woman"></i>
@@ -1640,7 +1784,7 @@
                 <span>타로</span>
                 <h2>혼자 고민,<br />같이 풀어요</h2>
                 <p>타로를 펼치면 방법을 찾을 수 있어요</p>
-                <button data-open="tarot" data-nav="tarot" type="button">타로 상담 보기</button>
+                <button data-open="tarot" data-nav="tarot" type="button">타로 보기</button>
               </div>
               <div class="consult-visual" aria-hidden="true">
                 <i class="consult-person solo man"></i>
@@ -1654,30 +1798,30 @@
           </div>
         </section>
 
-        <section class="consult-menu" aria-label="상담 메뉴">
+        <section class="consult-menu" aria-label="준비중 메뉴">
           <button data-open="input" data-service="year" type="button">
             <span class="consult-icon icon-fortune"></span>
-            <strong>운세상담</strong>
+            <strong>준비중</strong>
           </button>
           <button data-open="tarot" data-nav="tarot" type="button">
             <span class="consult-icon icon-tarot"></span>
-            <strong>타로상담</strong>
+            <strong>준비중</strong>
           </button>
           <button data-open="input" data-service="secret" type="button">
             <span class="consult-icon icon-shin"></span>
-            <strong>신점상담</strong>
+            <strong>준비중</strong>
           </button>
           <button data-open="input" data-service="psychology" type="button">
             <span class="consult-icon icon-mind"></span>
-            <strong>심리상담</strong>
+            <strong>준비중</strong>
           </button>
           <button data-open="input" data-service="today" type="button">
             <span class="consult-icon icon-free"></span>
-            <strong>무료고민상담</strong>
+            <strong>준비중</strong>
           </button>
           <button data-open="input" data-service="tomorrow" type="button">
             <span class="consult-icon icon-three"></span>
-            <strong>3분무료상담</strong>
+            <strong>준비중</strong>
           </button>
           <button data-open="home" data-nav="year" type="button">
             <span class="consult-icon icon-guide"></span>
@@ -1686,21 +1830,21 @@
         </section>
         <header class="page-header">
           <button class="back-button" data-open="home" type="button">‹</button>
-          <strong>Hướng dẫn</strong>
+          <strong>이용가이드</strong>
           <span></span>
         </header>
 
         <section class="guide-hero">
-          <span class="eyebrow">Free first</span>
-          <h1>tuvi.life mở kết quả miễn phí cho người dùng</h1>
-          <p>Mục tiêu trước mắt là tạo thói quen xem vận mỗi ngày. Khi có người dùng ổn định, có thể thử quảng cáo nhẹ hoặc tài trợ phù hợp.</p>
+          <span class="eyebrow">무료 베타</span>
+          <h1>오늘운세는 무료 결과를 제공합니다</h1>
+          <p>매일 짧게 확인하고 다시 돌아올 수 있도록, 핵심 결과는 무료로 제공합니다. 상세 풀이는 광고 보상형으로 열 수 있습니다.</p>
         </section>
 
         <section class="insight-card">
           <div class="step-list">
-            <article><b>01</b><strong>Vào trang</strong><span>Không cần cài app.</span></article>
-            <article><b>02</b><strong>Nhập ngày sinh</strong><span>Giờ sinh giúp kết quả sát hơn.</span></article>
-            <article><b>03</b><strong>Đọc và chia sẻ</strong><span>Nút chia sẻ tạo đoạn tóm tắt ngắn.</span></article>
+            <article><b>01</b><strong>페이지 접속</strong><span>앱 설치 없이 바로 볼 수 있습니다.</span></article>
+            <article><b>02</b><strong>생년월일 입력</strong><span>출생시간을 입력하면 결과가 더 자세해집니다.</span></article>
+            <article><b>03</b><strong>읽고 공유하기</strong><span>공유 버튼으로 짧은 요약 카드를 만들 수 있습니다.</span></article>
           </div>
         </section>
       </section>
@@ -1717,7 +1861,7 @@
       </button>
       <button data-open="guide" data-nav="guide" type="button">
         <span class="nav-icon nav-chat" aria-hidden="true"></span>
-        <b>상담</b>
+        <b>신년운세</b>
       </button>
     </nav>
 
@@ -1772,12 +1916,13 @@
         window.tuviSnsFallback(event);
       }, true);
       if (window.location.protocol === "file:") {
-        const script = document.createElement("script");
-        script.defer = true;
-        script.src = "app.js?v=paid-report-upgrade-1";
-        document.currentScript.after(script);
+        const notice = document.createElement("div");
+        notice.style.cssText = "position:fixed;left:12px;right:12px;bottom:88px;z-index:9999;padding:14px 16px;border-radius:16px;background:#171621;color:#fff;font:800 14px/1.45 system-ui,sans-serif;box-shadow:0 14px 34px rgba(0,0,0,.24);";
+        notice.textContent = "이 파일은 직접 열기보다 로컬 서버나 배포 URL에서 확인해 주세요. npm run local 실행 후 http://127.0.0.1:5173 으로 접속하면 정상 동작합니다.";
+        document.body.appendChild(notice);
       }
     </script>
-    <script type="module" src="app.js?v=paid-report-upgrade-1"></script>
+    <script type="module" src="app.js?v=korean-free-beta-5"></script>
   </body>
 </html>
+

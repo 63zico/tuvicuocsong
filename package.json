@@ -1,8 +1,8 @@
 {
-  "name": "tu-vi-cuoc-song",
+  "name": "today-fortune-free",
   "private": true,
   "version": "0.1.0",
-  "description": "Tu Vi Cuoc Song Zalo Mini App prototype",
+  "description": "Korean free fortune app with ad-based detail unlock",
   "scripts": {
     "local": "node server.mjs",
     "dev": "vite --host 127.0.0.1 --port 5173",
@@ -14,6 +14,7 @@
     "zalo:deploy:testing": "zmp deploy --testing"
   },
   "dependencies": {
+    "korean-lunar-calendar": "^0.3.6",
     "zmp-sdk": "latest",
     "zmp-ui": "latest"
   },
