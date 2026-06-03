@@ -807,17 +807,41 @@ function unlockDetail(noteText) {
   if (note) note.textContent = noteText;
 }
 
+function getAdsenseClient() {
+  return window.TODAY_FORTUNE_ADSENSE_CLIENT || window.TODAY_FORTUNE_CONFIG?.adsenseClient || "";
+}
+
+function getAdsenseSlots() {
+  return window.TODAY_FORTUNE_ADSENSE_SLOTS || window.TODAY_FORTUNE_CONFIG?.adsenseSlots || {};
+}
+
+function ensureAdsenseScript(client) {
+  if (!client) return false;
+  if (document.querySelector(`script[data-adsense-client="${client}"]`)) return true;
+  const script = document.createElement("script");
+  script.async = true;
+  script.crossOrigin = "anonymous";
+  script.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${encodeURIComponent(client)}`;
+  script.dataset.adsenseClient = client;
+  document.head.appendChild(script);
+  return true;
+}
+
 function mountAdSlots() {
+  const client = getAdsenseClient();
+  const slots = getAdsenseSlots();
+  const hasClient = ensureAdsenseScript(client);
   $$(".free-ad-slot").forEach((slot) => {
     const name = slot.dataset.adSlot || "result";
-    const client = window.TODAY_FORTUNE_ADSENSE_CLIENT || "";
-    const adSlot = window.TODAY_FORTUNE_ADSENSE_SLOTS?.[name] || "";
-    if (client && adSlot) {
+    const adSlot = slots[name] || "";
+    if (hasClient && adSlot) {
       slot.innerHTML = `<ins class="adsbygoogle" style="display:block;width:100%;height:100%;" data-ad-client="${client}" data-ad-slot="${adSlot}" data-ad-format="auto" data-full-width-responsive="true"></ins>`;
       try {
         (window.adsbygoogle = window.adsbygoogle || []).push({});
+        trackMetric("ad_slot_requested", { ad_slot_name: name });
       } catch {
         slot.innerHTML = adPlaceholder(name, "광고 로딩 실패");
+        trackMetric("ad_slot_failed", { ad_slot_name: name });
       }
       return;
     }
