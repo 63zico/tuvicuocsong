@@ -1,9 +1,9 @@
-# 개인정보처리방침
+# Chính Sách Quyền Riêng Tư
 
-오늘운세는 무료 운세 결과 제공을 위해 사용자가 입력한 이름, 생년월일, 출생시간, 성별을 브라우저 로컬 저장소에 저장할 수 있습니다.
+Life Tarot có thể lưu tên, ngày sinh, giờ sinh, giới tính và lịch sử xem vận may trong bộ nhớ local của trình duyệt để hiển thị kết quả và so sánh ở lần truy cập sau.
 
-현재 베타 버전은 별도 서버로 개인정보를 전송하지 않습니다. 광고 도입 시 광고 플랫폼이 쿠키 또는 기기 정보를 처리할 수 있으며, 실제 광고 ID 적용 전 관련 고지를 업데이트해야 합니다.
+Phiên bản beta hiện không gửi thông tin cá nhân này lên máy chủ riêng. Khi tích hợp quảng cáo thật, nền tảng quảng cáo có thể xử lý cookie hoặc thông tin thiết bị theo chính sách của họ.
 
-사용자는 브라우저 저장소를 삭제해 저장된 입력 정보와 운세 히스토리를 지울 수 있습니다.
+Người dùng có thể xóa dữ liệu đã lưu bằng cách xóa dữ liệu trang web trong trình duyệt.
 
-문의: `support@example.com`
+Liên hệ: `support@example.com`

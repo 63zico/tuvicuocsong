@@ -1,8 +1,8 @@
-# 문의
+# Liên Hệ
 
-서비스 오류, 광고 제휴, 개인정보 문의는 아래 이메일로 연락해 주세요.
+Vui lòng liên hệ qua email bên dưới nếu cần báo lỗi, hỏi về quảng cáo, hợp tác hoặc quyền riêng tư.
 
-- 이메일: `support@example.com`
-- 서비스명: 오늘운세
+- Email: `support@example.com`
+- Dịch vụ: Life Tarot
 
-베타 출시 전 실제 운영 이메일로 교체해야 합니다.
+Trước khi ra mắt chính thức, cần thay email này bằng email vận hành thật.

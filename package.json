@@ -1,8 +1,8 @@
 {
-  "name": "today-fortune-free",
+  "name": "life-tarot-free",
   "private": true,
   "version": "0.1.0",
-  "description": "Korean free fortune app with ad-based detail unlock",
+  "description": "Vietnamese free fortune and tarot app with ad-based detail unlock",
   "scripts": {
     "local": "node server.mjs",
     "dev": "vite --host 127.0.0.1 --port 5173",

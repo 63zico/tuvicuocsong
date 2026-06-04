@@ -1,9 +1,9 @@
-# 이용약관
+# Điều Khoản Sử Dụng
 
-오늘운세는 참고용 엔터테인먼트 운세 콘텐츠를 제공하는 무료 베타 서비스입니다.
+Life Tarot là dịch vụ beta miễn phí cung cấp nội dung vận may và Tarot với mục đích tham khảo và giải trí.
 
-서비스의 결과는 사용자의 입력 정보와 내부 운세 로직을 바탕으로 생성되며, 실제 미래를 보장하거나 중요한 의사결정을 대신하지 않습니다.
+Kết quả được tạo dựa trên thông tin người dùng nhập và logic luận giải nội bộ. Dịch vụ không cam kết dự đoán chính xác tương lai và không thay thế quyết định chuyên môn.
 
-사용자는 의료, 법률, 금융, 투자 등 중대한 판단을 운세 결과만으로 결정해서는 안 됩니다.
+Người dùng không nên dựa hoàn toàn vào kết quả để đưa ra quyết định quan trọng về y tế, pháp lý, tài chính hoặc đầu tư.
 
-서비스는 광고 기반 무료 구조로 운영될 수 있으며, 광고 시청 보상으로 상세 풀이 또는 복주머니가 제공될 수 있습니다.
+Dịch vụ có thể vận hành bằng mô hình quảng cáo miễn phí. Một số phần luận giải chi tiết có thể được mở sau khi xem quảng cáo hoặc khi quảng cáo không tải được.
