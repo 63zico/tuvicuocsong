@@ -3,7 +3,7 @@ import KoreanLunarCalendar from "./node_modules/korean-lunar-calendar/dist/esm/k
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => Array.from(document.querySelectorAll(selector));
 
-const VERSION = "vi-ui-polish-1";
+const VERSION = "vi-ui-polish-2";
 
 const services = {
   today: {

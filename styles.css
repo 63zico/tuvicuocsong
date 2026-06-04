@@ -9077,3 +9077,81 @@ body.free-beta .app-shell::before {
     height: 112px;
   }
 }
+
+/* Result pages can contain long Vietnamese phrases; force them to shrink and wrap. */
+.free-beta #result,
+.free-beta #result * {
+  min-width: 0;
+}
+
+.free-beta #result .free-result-summary,
+.free-beta #result .free-result-summary > *,
+.free-beta #result .free-key-card,
+.free-beta #result .personal-signal-card,
+.free-beta #result .free-score-card,
+.free-beta #result .free-summary-grid,
+.free-beta #result .today-action-card,
+.free-beta #result .free-detail-lock,
+.free-beta #result .share-card-panel,
+.free-beta #result .revisit-card {
+  width: 100%;
+  max-width: 100%;
+}
+
+.free-beta #result .free-result-summary {
+  width: auto;
+  max-width: calc(100% - 20px);
+}
+
+.free-beta #result .free-key-card,
+.free-beta #result .personal-signal-card,
+.free-beta #result .free-score-card,
+.free-beta #result .free-summary-grid article,
+.free-beta #result .today-action-card,
+.free-beta #result .free-detail-lock,
+.free-beta #result .share-card-panel,
+.free-beta #result .revisit-card {
+  overflow: hidden;
+}
+
+.free-beta #result h1,
+.free-beta #result h2,
+.free-beta #result h3,
+.free-beta #result strong,
+.free-beta #result b,
+.free-beta #result p,
+.free-beta #result li,
+.free-beta #result em,
+.free-beta #result span,
+.free-beta #result small {
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+.free-beta #result .free-score-card {
+  grid-template-columns: 1fr;
+}
+
+.free-beta #result .share-card-preview {
+  justify-items: start;
+  overflow: hidden;
+}
+
+.free-beta #result .share-card-preview > * {
+  justify-self: start;
+  width: auto;
+}
+
+.free-beta #result .personal-signal-card ul,
+.free-beta #result .free-summary-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (max-width: 380px) {
+  .free-beta #result .personal-signal-card ul,
+  .free-beta #result .free-summary-grid {
+    grid-template-columns: 1fr;
+  }
+}
