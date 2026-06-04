@@ -821,7 +821,7 @@ function getAdsenseSlots() {
 
 function ensureAdsenseScript(client) {
   if (!client) return false;
-  if (document.querySelector(`script[data-adsense-client="${client}"]`)) return true;
+  if (document.querySelector(`script[data-adsense-client="${client}"], script[src*="pagead2.googlesyndication.com"][src*="${client}"]`)) return true;
   const script = document.createElement("script");
   script.async = true;
   script.crossOrigin = "anonymous";
