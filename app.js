@@ -3,7 +3,7 @@ import KoreanLunarCalendar from "./node_modules/korean-lunar-calendar/dist/esm/k
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => Array.from(document.querySelectorAll(selector));
 
-const VERSION = "vi-free-beta-1";
+const VERSION = "vi-ui-polish-1";
 
 const services = {
   today: {
@@ -557,7 +557,11 @@ function openView(viewId) {
   });
   $$(".bottom-nav button").forEach((button) => {
     const nav = button.dataset.nav;
-    const isActive = (viewId === "home" && nav === "home") || (viewId === "tarot" && nav === "tarot") || (button.dataset.service === currentService && viewId !== "home");
+    const serviceViews = new Set(["input", "analysis", "result", "year-info"]);
+    const isActive =
+      (viewId === "home" && nav === "home") ||
+      (viewId === "tarot" && nav === "tarot") ||
+      (serviceViews.has(viewId) && button.dataset.service === currentService);
     button.classList.toggle("active", Boolean(isActive));
   });
   window.scrollTo({ top: 0, behavior: "smooth" });
@@ -1063,8 +1067,8 @@ function applyStaticCopy() {
   const bottomNav = $(".bottom-nav");
   if (bottomNav) {
     bottomNav.innerHTML = `
-      <button class="active" data-open="home" data-nav="home" type="button"><span class="nav-icon nav-year" aria-hidden="true"></span><b>Trang chủ</b></button>
-      <button data-open="input" data-service="today" data-nav="today" type="button"><span class="nav-icon nav-year" aria-hidden="true"></span><b>Hôm nay</b></button>
+      <button class="active" data-open="home" data-nav="home" type="button"><span class="nav-icon nav-home" aria-hidden="true"></span><b>Trang chủ</b></button>
+      <button data-open="input" data-service="today" data-nav="today" type="button"><span class="nav-icon nav-today" aria-hidden="true"></span><b>Hôm nay</b></button>
       <button data-open="tarot" data-nav="tarot" type="button"><span class="nav-icon nav-tarot" aria-hidden="true"></span><b>Tarot</b></button>
       <button data-open="year-info" data-service="year" data-nav="year" type="button"><span class="nav-icon nav-year" aria-hidden="true"></span><b>Vận năm</b></button>
     `;
